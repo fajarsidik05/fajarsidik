@@ -1,472 +1,152 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Fajar Sidik — Laporan Tahunan Personal</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#f7f2e6;
-    --surface:#efe8d6;
-    --surface-2:#e6dcc2;
-    --paper:#211a12;
-    --muted:#6e6656;
-    --gold:#9c7a3e;
-    --ledger-green:#3f5a48;
-    --line:#dccdaa;
-    --display: 'Fraunces', serif;
-    --body: 'IBM Plex Sans', sans-serif;
-    --mono: 'IBM Plex Mono', monospace;
-  }
-
-  *{ box-sizing:border-box; margin:0; padding:0; }
-
-  html{ scroll-behavior:smooth; }
-
-  body{
-    background:var(--ink);
-    color:var(--paper);
-    font-family:var(--body);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-
-  ::selection{ background:var(--gold); color:var(--paper); }
-
-  a{ color:inherit; text-decoration:none; }
-
-  .wrap{
-    max-width:920px;
-    margin:0 auto;
-    padding:0 32px;
-  }
-
-  /* ---------- NAV ---------- */
-  header.nav{
-    position:sticky; top:0; z-index:50;
-    background:rgba(247,242,230,0.88);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{
-    max-width:920px; margin:0 auto; padding:18px 32px;
-    display:flex; justify-content:space-between; align-items:center;
-  }
-  .nav-mark{
-    font-family:var(--mono); font-size:13px; letter-spacing:0.08em;
-    color:var(--gold);
-  }
-  .nav-links{ display:flex; gap:28px; font-family:var(--mono); font-size:13px; }
-  .nav-links a{ color:var(--muted); transition:color .2s; }
-  .nav-links a:hover{ color:var(--paper); }
-  .nav-toggle{ display:none; background:none; border:1px solid var(--line); color:var(--paper); font-family:var(--mono); font-size:12px; padding:6px 10px; cursor:pointer; }
-
-  /* ---------- HERO / COVER PAGE ---------- */
-  .cover{
-    padding:100px 0 80px;
-    border-bottom:1px solid var(--line);
-    position:relative;
-  }
-  .cover-eyebrow{
-    font-family:var(--mono); font-size:13px; color:var(--ledger-green);
-    letter-spacing:0.12em; text-transform:uppercase;
-    display:flex; align-items:center; gap:12px; margin-bottom:28px;
-  }
-  .cover-eyebrow::after{
-    content:''; flex:1; height:1px; background:var(--line);
-  }
-  h1.cover-name{
-    font-family:var(--display); font-weight:600;
-    font-size:clamp(44px, 7vw, 76px);
-    line-height:1.03; letter-spacing:-0.01em;
-    color:var(--paper);
-  }
-  .cover-name em{ font-style:italic; color:var(--gold); font-weight:500; }
-  .cover-role{
-    margin-top:22px; font-size:19px; color:var(--muted);
-    max-width:560px;
-  }
-  .cover-role strong{ color:var(--paper); font-weight:500; }
-
-  .cover-stats{
-    margin-top:56px;
-    display:grid; grid-template-columns:repeat(3,1fr);
-    border-top:1px solid var(--line);
-  }
-  .stat{
-    padding:20px 24px 0 0; border-right:1px solid var(--line);
-  }
-  .stat:last-child{ border-right:none; }
-  .stat-num{
-    font-family:var(--mono); font-size:28px; color:var(--gold);
-  }
-  .stat-label{
-    font-family:var(--mono); font-size:12px; color:var(--muted);
-    margin-top:6px; letter-spacing:0.03em;
-  }
-
-  /* ---------- SECTION SHELL ---------- */
-  section{ padding:72px 0; border-bottom:1px solid var(--line); }
-  .section-head{
-    display:flex; align-items:baseline; gap:16px; margin-bottom:36px;
-  }
-  .section-index{
-    font-family:var(--mono); font-size:13px; color:var(--gold);
-  }
-  h2.section-title{
-    font-family:var(--display); font-weight:600; font-size:30px; color:var(--paper);
-  }
-
-  /* ---------- ABOUT ---------- */
-  .about-text{
-    font-size:17px; color:var(--paper); max-width:640px;
-  }
-  .about-text + .about-text{ margin-top:16px; color:var(--muted); }
-
-  /* ---------- LEDGER (EXPERIENCE) ---------- */
-  .ledger{ border-top:1px solid var(--line); }
-  .ledger-row{
-    display:grid;
-    grid-template-columns:110px 1fr 140px;
-    gap:20px;
-    padding:22px 0;
-    border-bottom:1px solid var(--line);
-    align-items:start;
-  }
-  .ledger-date{
-    font-family:var(--mono); font-size:13px; color:var(--ledger-green);
-  }
-  .ledger-role{
-    font-family:var(--display); font-size:19px; font-weight:600; color:var(--paper);
-  }
-  .ledger-org{
-    font-size:14px; color:var(--muted); margin-top:2px;
-  }
-  .ledger-desc{
-    font-size:14px; color:var(--muted); margin-top:10px; line-height:1.7;
-  }
-  .ledger-tag{
-    font-family:var(--mono); font-size:12px; color:var(--gold);
-    text-align:right; align-self:start;
-  }
-
-  /* ---------- PROJECTS ---------- */
-  .projects{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); }
-  .project-card{
-    background:var(--surface); padding:28px;
-  }
-  .project-kicker{
-    font-family:var(--mono); font-size:12px; color:var(--ledger-green); letter-spacing:0.05em; text-transform:uppercase;
-  }
-  .project-title{
-    font-family:var(--display); font-size:22px; font-weight:600; margin-top:10px; color:var(--paper);
-  }
-  .project-desc{
-    font-size:14px; color:var(--muted); margin-top:12px; line-height:1.7;
-  }
-  .project-meta{
-    margin-top:18px; font-family:var(--mono); font-size:12px; color:var(--gold);
-  }
-
-  @media (max-width:640px){ .projects{ grid-template-columns:1fr; } }
-
-  /* ---------- SKILLS ---------- */
-  .skills-table{ border-top:1px solid var(--line); }
-  .skill-row{
-    display:grid; grid-template-columns:220px 1fr;
-    align-items:center; gap:20px;
-    padding:16px 0; border-bottom:1px solid var(--line);
-  }
-  .skill-name{ font-size:14px; color:var(--paper); }
-  .skill-bar-track{
-    height:6px; background:var(--surface-2); position:relative; overflow:hidden;
-  }
-  .skill-bar-fill{
-    position:absolute; left:0; top:0; bottom:0;
-    background:linear-gradient(90deg, var(--ledger-green), var(--gold));
-    width:0%;
-    transition:width 1.1s cubic-bezier(.2,.8,.2,1);
-  }
-
-  /* ---------- FOOTER / CONTACT ---------- */
-  footer{ padding:64px 0 60px; }
-  .contact-title{
-    font-family:var(--display); font-weight:600;
-    font-size:clamp(32px,5vw,48px); color:var(--paper); max-width:560px;
-  }
-  .contact-links{
-    margin-top:32px; display:flex; flex-wrap:wrap; gap:14px;
-  }
-  .contact-link{
-    font-family:var(--mono); font-size:13px;
-    border:1px solid var(--line); padding:12px 18px;
-    color:var(--paper); transition:all .2s;
-  }
-  .contact-link:hover{ border-color:var(--gold); color:var(--gold); }
-  .footer-note{
-    margin-top:48px; font-family:var(--mono); font-size:12px; color:var(--muted);
-    display:flex; justify-content:space-between; border-top:1px solid var(--line); padding-top:20px;
-  }
-
-  @media (max-width: 680px){
-    .nav-links{ display:none; }
-    .nav-toggle{ display:block; }
-    .cover{ padding:70px 0 56px; }
-    .cover-stats{ grid-template-columns:1fr; }
-    .stat{ border-right:none; border-bottom:1px solid var(--line); padding-bottom:16px; }
-    .ledger-row{ grid-template-columns:1fr; }
-    .ledger-tag{ text-align:left; }
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-    .skill-bar-fill{ transition:none; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio Fajar Sidik, fresh graduate yang sedang membangun karier di bidang Data Analytics.">
+  <meta name="theme-color" content="#0b1220">
+  <title>Fajar Sidik | Data Analyst Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b1220;--panel:#111c2e;--panel2:#152238;--text:#edf3fb;--muted:#a4b2c5;--blue:#66aaff;--cyan:#67dfd0;--line:rgba(177,199,225,.14);--max:1100px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.7}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max),calc(100% - 48px));margin:auto}
+    .nav{position:sticky;top:0;z-index:20;background:rgba(11,18,32,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font:800 17px Manrope,sans-serif;letter-spacing:-.04em}.brand span{color:var(--blue)}
+    .links{display:flex;gap:28px;color:var(--muted);font-size:13px}.links a:hover{color:var(--text)}
+    .menu{display:none;background:transparent;color:var(--text);border:1px solid var(--line);padding:8px 12px;border-radius:8px}
+    .hero{padding:108px 0 94px;display:grid;grid-template-columns:1.4fr .6fr;gap:48px;align-items:center}
+    .eyebrow{color:var(--cyan);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.2;letter-spacing:-.035em}
+    h1{font-size:clamp(42px,7vw,70px);margin:20px 0}
+    h1 span{color:var(--blue)}
+    .lead{font-size:18px;color:var(--muted);max-width:650px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:9px;font-size:14px;font-weight:700;border:1px solid var(--line);transition:.2s}
+    .btn.primary{background:var(--blue);color:#07101e;border-color:var(--blue)}.btn:hover{transform:translateY(-2px)}
+    .hero-card{background:linear-gradient(145deg,#172943,#101a2b);border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 24px 70px #0003}
+    .avatar{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:#07101e;font:800 22px Manrope;margin-bottom:22px}
+    .hero-card .small{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.12em}
+    .hero-card h3{font-size:20px;margin:8px 0 14px}.status{display:inline-flex;gap:8px;align-items:center;color:var(--cyan);font-size:13px}.dot{width:7px;height:7px;border-radius:50%;background:var(--cyan)}
+    section{padding:76px 0;border-top:1px solid var(--line)}
+    .section-top{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}
+    .section-top h2{font-size:clamp(28px,4vw,38px);margin-top:8px}.section-intro{max-width:520px;color:var(--muted);font-size:14px}
+    .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px}
+    .card p{color:var(--muted);font-size:15px}.facts{display:grid;gap:16px}.fact{padding-bottom:14px;border-bottom:1px solid var(--line)}.fact:last-child{border:0;padding:0}.fact b{display:block;font-size:13px;margin-bottom:3px}.fact span{color:var(--muted);font-size:13px}
+    .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .skill{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}.skill h3{font-size:16px;margin-bottom:7px}.skill p{font-size:13px;color:var(--muted)}
+    .tag{display:inline-block;margin-top:14px;padding:5px 9px;border-radius:99px;background:#1d3551;color:#9ecaff;font-size:11px;font-weight:700}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .project{background:linear-gradient(145deg,var(--panel),#101a2b);border:1px solid var(--line);border-radius:16px;padding:25px;display:flex;flex-direction:column;min-height:230px}
+    .project .number{font:700 12px Manrope;color:var(--cyan);letter-spacing:.12em}.project h3{font-size:20px;margin:16px 0 10px}.project p{color:var(--muted);font-size:14px}.project .tag{align-self:flex-start;margin-top:auto}
+    .experience{display:grid;grid-template-columns:180px 1fr;gap:22px;padding:24px 0;border-bottom:1px solid var(--line)}.experience:last-child{border:0}.experience .type{color:var(--cyan);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em}.experience h3{font-size:18px;margin-bottom:5px}.experience p{color:var(--muted);font-size:14px}
+    .contact{background:linear-gradient(130deg,#142945,#101a2b);border:1px solid var(--line);border-radius:20px;padding:36px;display:flex;align-items:center;justify-content:space-between;gap:28px}.contact h2{font-size:clamp(26px,4vw,36px);max-width:540px}.contact p{color:var(--muted);font-size:14px;margin-top:10px}.contact .actions{margin:0}
+    footer{padding:30px 0;color:var(--muted);font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:16px}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:76px 0}.hero-card{max-width:420px}.about-grid{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,1fr)}.contact{align-items:flex-start;flex-direction:column}}
+    @media(max-width:560px){.container{width:min(100% - 32px,var(--max))}.links{display:none;position:absolute;top:76px;left:0;right:0;padding:20px 24px;background:var(--panel);flex-direction:column;gap:16px;border-bottom:1px solid var(--line)}.links.open{display:flex}.menu{display:block}.skills,.projects{grid-template-columns:1fr}.section-top{align-items:flex-start;flex-direction:column}.experience{grid-template-columns:1fr;gap:8px}.contact{padding:26px}.footer-inner{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
 </head>
 <body>
-
-<header class="nav">
-  <div class="nav-inner">
-    <div class="nav-mark">FS / LAPORAN TAHUNAN</div>
-    <nav class="nav-links">
-      <a href="#tentang">Tentang</a>
-      <a href="#pengalaman">Pengalaman</a>
-      <a href="#proyek">Proyek</a>
-      <a href="#keahlian">Keahlian</a>
-      <a href="#kontak">Kontak</a>
-    </nav>
-    <button class="nav-toggle" id="navToggle">MENU</button>
-  </div>
-</header>
-
-<main class="wrap">
-
-  <!-- COVER -->
-  <section class="cover" style="border-bottom:1px solid var(--line); padding-top:100px;">
-    <div class="cover-eyebrow">Laporan Tahunan Personal &mdash; Tahun Fiskal 2026</div>
-    <h1 class="cover-name">Fajar Sidik<br><em>Sarjana Pendidikan Bisnis</em></h1>
-    <p class="cover-role">
-      Mahasiswa tingkat akhir <strong>Pendidikan Bisnis, FPEB, Universitas Pendidikan Indonesia</strong>.
-      Fokus pada literasi keuangan, perilaku investasi, dan analisis data — dengan minat aktif
-      di bidang keuangan pribadi, investasi, dan kewirausahaan.
-    </p>
-    <div class="cover-stats">
-      <div class="stat">
-        <div class="stat-num" data-count="205">0</div>
-        <div class="stat-label">RESPONDEN RISET SKRIPSI</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num" data-count="3">0</div>
-        <div class="stat-label">PERAN PROFESIONAL &amp; ORGANISASI</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num" data-count="1">0</div>
-        <div class="stat-label">USAHA RINTISAN &mdash; CITAMONDO</div>
-      </div>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">FAJAR<span>.</span></a>
+      <nav class="links" id="navLinks" aria-label="Navigasi utama">
+        <a href="#about">Tentang</a><a href="#skills">Keahlian</a><a href="#projects">Proyek</a><a href="#experience">Pengalaman</a><a href="#contact">Kontak</a>
+      </nav>
+      <button class="menu" id="menuButton" aria-label="Buka menu" aria-expanded="false">Menu</button>
     </div>
-  </section>
+  </header>
 
-  <!-- TENTANG -->
-  <section id="tentang">
-    <div class="section-head">
-      <span class="section-index">01</span>
-      <h2 class="section-title">Ringkasan Eksekutif</h2>
-    </div>
-    <p class="about-text">
-      Saya sedang menyelesaikan skripsi yang mengkaji pengaruh Literasi Keuangan terhadap
-      Minat Investasi, dengan Persepsi Risiko sebagai mediator, pada generasi Z di Jawa Barat.
-      Riset ini menggunakan pendekatan CB-SEM melalui IBM SPSS AMOS dengan 205 responden.
-    </p>
-    <p class="about-text">
-      Di luar akademik, saya membangun pengalaman lintas bidang: dari operasi penjualan digital,
-      mengajar di tingkat SMK, hingga memimpin proyek mahasiswa. Saya juga menjalankan usaha
-      kuliner fusion bernama Citamondo sebagai ruang belajar kewirausahaan langsung.
-    </p>
-  </section>
-
-  <!-- PENGALAMAN -->
-  <section id="pengalaman">
-    <div class="section-head">
-      <span class="section-index">02</span>
-      <h2 class="section-title">Catatan Pengalaman</h2>
-    </div>
-    <div class="ledger">
-
-      <div class="ledger-row">
-        <div class="ledger-date">2024&ndash;2025</div>
+  <main>
+    <div class="container">
+      <section class="hero" id="home" style="border:0">
         <div>
-          <div class="ledger-role">Sales Operations &amp; Lead Generation Specialist</div>
-          <div class="ledger-org">PT Oxyfit Sehat Bersama</div>
-          <div class="ledger-desc">
-            Mengelola alur perolehan prospek dan mendukung operasional penjualan
-            untuk mendorong pertumbuhan basis pelanggan.
+          <div class="eyebrow">Personal Portfolio · 2026</div>
+          <h1>Hi, I'm Fajar.<br><span>Data Analytics</span> enthusiast.</h1>
+          <p class="lead">Lulusan Pendidikan Bisnis yang sedang membangun kompetensi di bidang data analytics. Tertarik mengolah data menjadi informasi yang jelas dan membantu proses pengambilan keputusan.</p>
+          <div class="actions">
+            <a class="btn primary" href="#projects">Lihat proyek</a>
+            <a class="btn" href="mailto:fajarsidik338@gmail.com">Hubungi saya</a>
           </div>
         </div>
-        <div class="ledger-tag">SALES</div>
-      </div>
+        <aside class="hero-card">
+          <div class="avatar">FS</div>
+          <div class="small">Current focus</div>
+          <h3>Building a foundation in data analytics</h3>
+          <div class="status"><span class="dot"></span> Open to full-time opportunities</div>
+        </aside>
+      </section>
 
-      <div class="ledger-row">
-        <div class="ledger-date">2024</div>
-        <div>
-          <div class="ledger-role">Asisten Pengajar</div>
-          <div class="ledger-org">Program P3K MBKM &mdash; SMK Negeri 2 Bandung</div>
-          <div class="ledger-desc">
-            Mendampingi proses belajar-mengajar di bidang bisnis, menjembatani teori
-            akademik dengan praktik kelas nyata.
+      <section id="about">
+        <div class="section-top"><div><div class="eyebrow">01 / About</div><h2>Tentang Saya</h2></div><p class="section-intro">Menggabungkan pemahaman bisnis, ketelitian, dan proses belajar teknis untuk berkembang sebagai Data Analyst.</p></div>
+        <div class="about-grid">
+          <div class="card"><p>Saya merupakan lulusan S1 Pendidikan Bisnis, Fakultas Pendidikan Ekonomi dan Bisnis, Universitas Pendidikan Indonesia. Latar belakang bisnis membantu saya memahami konteks di balik angka, sementara pengalaman akademik dan pekerjaan membentuk kemampuan komunikasi, pemecahan masalah, serta koordinasi.</p><br><p>Saat ini saya berfokus memperkuat kemampuan analisis data melalui Excel dan SQL, kemudian memperluasnya ke visualisasi data menggunakan Power BI. Saya tertarik pada proyek yang menghubungkan data dengan persoalan bisnis nyata.</p></div>
+          <div class="card facts">
+            <div class="fact"><b>Pendidikan</b><span>S1 Pendidikan Bisnis · Universitas Pendidikan Indonesia</span></div>
+            <div class="fact"><b>Lokasi</b><span>Bandung, Indonesia</span></div>
+            <div class="fact"><b>Fokus karier</b><span>Data Analyst / Business Intelligence</span></div>
+            <div class="fact"><b>Bahasa</b><span>Bahasa Indonesia · English (developing)</span></div>
           </div>
         </div>
-        <div class="ledger-tag">EDUKASI</div>
-      </div>
+      </section>
 
-      <div class="ledger-row">
-        <div class="ledger-date">2022&ndash;2024</div>
-        <div>
-          <div class="ledger-role">Peran Kepemimpinan Proyek Mahasiswa</div>
-          <div class="ledger-org">FPEB, Universitas Pendidikan Indonesia</div>
-          <div class="ledger-desc">
-            Memimpin beberapa inisiatif dan proyek mahasiswa, mengasah kemampuan
-            koordinasi tim dan manajemen proyek.
+      <section id="skills">
+        <div class="section-top"><div><div class="eyebrow">02 / Skills</div><h2>Keahlian & Tools</h2></div><p class="section-intro">Saya membedakan kemampuan yang sudah digunakan dengan tools yang masih dalam tahap pembelajaran.</p></div>
+        <div class="skills">
+          <article class="skill"><h3>Microsoft Excel</h3><p>Formula, pengolahan data, dan PivotTable.</p><span class="tag">Intermediate</span></article>
+          <article class="skill"><h3>SQL · PostgreSQL</h3><p>Mempelajari query untuk mengambil, memfilter, dan menganalisis data.</p><span class="tag">Currently learning</span></article>
+          <article class="skill"><h3>Power BI</h3><p>Tool visualisasi dan business intelligence yang menjadi fokus pembelajaran berikutnya.</p><span class="tag">Learning roadmap</span></article>
+          <article class="skill"><h3>Python</h3><p>Direncanakan sebagai keterampilan lanjutan untuk analisis data.</p><span class="tag">Planned</span></article>
+          <article class="skill"><h3>Business Research</h3><p>Perumusan masalah, pengumpulan data, dan interpretasi hasil penelitian.</p><span class="tag">Academic experience</span></article>
+          <article class="skill"><h3>Communication</h3><p>Komunikasi pelanggan, koordinasi, dan penyampaian informasi.</p><span class="tag">Work experience</span></article>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="section-top"><div><div class="eyebrow">03 / Selected work</div><h2>Proyek</h2></div><p class="section-intro">Karya akan ditambahkan setelah proyek selesai dan hasilnya siap ditinjau. Tidak ada studi kasus fiktif di portfolio ini.</p></div>
+        <div class="projects">
+          <article class="project"><div class="number">PROJECT 01 · ACADEMIC RESEARCH</div><h3>Financial Literacy & Investment Intention</h3><p>Penelitian mengenai pengaruh literasi keuangan terhadap minat investasi dengan perceived risk sebagai variabel mediasi. Menggunakan survei pada Generasi Z di Jawa Barat dan analisis CB-SEM dengan IBM SPSS AMOS.</p><span class="tag">205 respondents · AMOS</span></article>
+          <article class="project"><div class="number">PROJECT 02 · IN PROGRESS</div><h3>SQL Data Analysis Project</h3><p>Studi kasus analisis data menggunakan PostgreSQL sedang disiapkan. Detail dataset, query, dan insight akan ditampilkan setelah proyek selesai.</p><span class="tag">PostgreSQL · In progress</span></article>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="section-top"><div><div class="eyebrow">04 / Experience</div><h2>Pengalaman</h2></div></div>
+        <div class="experience"><div class="type">Professional</div><div><h3>Fitness Consultant · Oxy Fit 24H Bandung</h3><p>Berpengalaman dalam komunikasi dengan calon pelanggan dan anggota, tindak lanjut prospek, serta mendukung aktivitas operasional penjualan. Pengalaman ini mengembangkan kemampuan komunikasi, pelayanan, dan pengelolaan informasi pelanggan.</p></div></div>
+      </section>
+
+      <section id="contact">
+        <div class="contact">
+          <div><div class="eyebrow">05 / Get in touch</div><h2>Mari terhubung dan berdiskusi.</h2><p>Terbuka untuk peluang kerja dan kolaborasi di bidang data, bisnis, dan analisis.</p></div>
+          <div class="actions">
+            <a class="btn primary" href="mailto:fajarsidik338@gmail.com">Email saya</a>
+            <a class="btn" href="https://www.linkedin.com/in/fajarsidik01" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a class="btn" href="https://github.com/fajarsidik05" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
           </div>
         </div>
-        <div class="ledger-tag">LEADERSHIP</div>
-      </div>
-
+      </section>
     </div>
-  </section>
-
-  <!-- PROYEK -->
-  <section id="proyek">
-    <div class="section-head">
-      <span class="section-index">03</span>
-      <h2 class="section-title">Proyek &amp; Inisiatif</h2>
-    </div>
-    <div class="projects">
-      <div class="project-card">
-        <div class="project-kicker">Riset Skripsi</div>
-        <div class="project-title">Literasi Keuangan &amp; Minat Investasi</div>
-        <p class="project-desc">
-          Menguji pengaruh literasi keuangan terhadap minat investasi Generasi Z,
-          dengan persepsi risiko sebagai variabel mediasi, menggunakan CB-SEM (AMOS).
-        </p>
-        <div class="project-meta">205 RESPONDEN &middot; JAWA BARAT</div>
-      </div>
-      <div class="project-card">
-        <div class="project-kicker">Usaha Rintisan</div>
-        <div class="project-title">Citamondo</div>
-        <p class="project-desc">
-          Usaha kuliner fusion yang dibangun sebagai ruang eksperimen kewirausahaan,
-          mulai dari konsep produk hingga identitas merek.
-        </p>
-        <div class="project-meta">F&amp;B &middot; BRAND BUILDING</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- KEAHLIAN -->
-  <section id="keahlian">
-    <div class="section-head">
-      <span class="section-index">04</span>
-      <h2 class="section-title">Statement Keahlian</h2>
-    </div>
-    <div class="skills-table">
-      <div class="skill-row">
-        <div class="skill-name">Analisis Keuangan &amp; Riset Investasi</div>
-        <div class="skill-bar-track"><div class="skill-bar-fill" data-fill="88"></div></div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-name">Analisis Data (SPSS AMOS, SEM)</div>
-        <div class="skill-bar-track"><div class="skill-bar-fill" data-fill="82"></div></div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-name">Data Analytics (Google Data Analytics)</div>
-        <div class="skill-bar-track"><div class="skill-bar-fill" data-fill="75"></div></div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-name">Kepemimpinan &amp; Manajemen Proyek</div>
-        <div class="skill-bar-track"><div class="skill-bar-fill" data-fill="80"></div></div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-name">Operasi Penjualan &amp; Lead Generation</div>
-        <div class="skill-bar-track"><div class="skill-bar-fill" data-fill="78"></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- KONTAK -->
-  <footer id="kontak">
-    <h2 class="contact-title">Terbuka untuk peluang riset, magang, dan kolaborasi.</h2>
-    <div class="contact-links">
-      <a class="contact-link" href="mailto:fajarsidik338@gmail.com">EMAIL</a>
-      <a class="contact-link" href="https://www.linkedin.com/in/fajarsidik01" target="_blank" rel="noopener">LINKEDIN</a>
-      <a class="contact-link" href="https://www.instagram.com/fajarrfs_" target="_blank" rel="noopener">INSTAGRAM</a>
-    </div>
-    <div class="footer-note">
-      <span>© 2026 Fajar Sidik</span>
-      <span>Bandung, Indonesia</span>
-    </div>
-  </footer>
-
-</main>
-
-<script>
-  // Toggle menu mobile sederhana
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.querySelector('.nav-links');
-  navToggle.addEventListener('click', () => {
-    const isOpen = navLinks.style.display === 'flex';
-    navLinks.style.display = isOpen ? 'none' : 'flex';
-    navLinks.style.flexDirection = 'column';
-    navLinks.style.position = 'absolute';
-    navLinks.style.top = '58px';
-    navLinks.style.right = '32px';
-    navLinks.style.background = 'var(--surface)';
-    navLinks.style.border = '1px solid var(--line)';
-    navLinks.style.padding = '16px 20px';
-    navLinks.style.gap = '14px';
-  });
-
-  // Animasi angka naik pada bagian statistik cover
-  const counters = document.querySelectorAll('.stat-num');
-  const animateCount = (el) => {
-    const target = parseInt(el.dataset.count, 10);
-    let current = 0;
-    const step = Math.max(1, Math.ceil(target / 40));
-    const tick = () => {
-      current += step;
-      if (current >= target) {
-        el.textContent = target;
-      } else {
-        el.textContent = current;
-        requestAnimationFrame(tick);
-      }
-    };
-    tick();
-  };
-
-  // Animasi bar keahlian
-  const fills = document.querySelectorAll('.skill-bar-fill');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        if (entry.target.classList.contains('stat-num')) {
-          animateCount(entry.target);
-        }
-        if (entry.target.classList.contains('skill-bar-fill')) {
-          entry.target.style.width = entry.target.dataset.fill + '%';
-        }
-        observer.unobserve(entry.target);
-      }
+  </main>
+  <footer><div class="container footer-inner"><span>© 2026 Fajar Sidik</span><span>Designed & built with HTML, CSS, and JavaScript.</span></div></footer>
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const navLinks = document.getElementById('navLinks');
+    menuButton.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
     });
-  }, { threshold: 0.4 });
-
-  counters.forEach(c => observer.observe(c));
-  fills.forEach(f => observer.observe(f));
-</script>
-
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+  </script>
 </body>
 </html>
