@@ -3,54 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio Fajar Sidik, fresh graduate yang sedang membangun karier di bidang Data Analytics.">
-  <meta name="theme-color" content="#0b1220">
-  <title>Fajar Sidik | Data Analyst Portfolio</title>
+  <meta name="description" content="Personal portfolio Fajar Sidik, lulusan Pendidikan Bisnis dengan minat pada analisis data, bisnis, marketing, riset, dan AI content creation.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Fajar Sidik | Personal Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#0b1220;--panel:#111c2e;--panel2:#152238;--text:#edf3fb;--muted:#a4b2c5;--blue:#66aaff;--cyan:#67dfd0;--line:rgba(177,199,225,.14);--max:1100px}
+    :root{--bg:#fff;--surface:#f7f9fc;--surface2:#eef3f9;--text:#172b43;--muted:#627187;--navy:#173b63;--blue:#2869a6;--line:#e3eaf2;--max:1120px;--shadow:0 12px 36px rgba(25,55,90,.07)}
     *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
     body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.7}
     a{color:inherit;text-decoration:none}
     .container{width:min(var(--max),calc(100% - 48px));margin:auto}
-    .nav{position:sticky;top:0;z-index:20;background:rgba(11,18,32,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
-    .brand{font:800 17px Manrope,sans-serif;letter-spacing:-.04em}.brand span{color:var(--blue)}
-    .links{display:flex;gap:28px;color:var(--muted);font-size:13px}.links a:hover{color:var(--text)}
-    .menu{display:none;background:transparent;color:var(--text);border:1px solid var(--line);padding:8px 12px;border-radius:8px}
-    .hero{padding:108px 0 94px;display:grid;grid-template-columns:1.4fr .6fr;gap:48px;align-items:center}
-    .eyebrow{color:var(--cyan);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .nav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font:800 18px Manrope,sans-serif;letter-spacing:-.05em;color:var(--navy)}.brand span{color:var(--blue)}
+    .links{display:flex;gap:27px;color:var(--muted);font-size:13px;font-weight:600}.links a:hover{color:var(--blue)}
+    .menu{display:none;background:#fff;color:var(--navy);border:1px solid var(--line);padding:8px 12px;border-radius:8px;font:600 13px "DM Sans"}
+    .hero{padding:104px 0 90px;display:grid;grid-template-columns:1.35fr .65fr;gap:56px;align-items:center}
+    .eyebrow{color:var(--blue);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
     h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.2;letter-spacing:-.035em}
-    h1{font-size:clamp(42px,7vw,70px);margin:20px 0}
+    h1{font-size:clamp(42px,6.5vw,68px);margin:17px 0 20px;color:var(--navy)}
     h1 span{color:var(--blue)}
-    .lead{font-size:18px;color:var(--muted);max-width:650px}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:9px;font-size:14px;font-weight:700;border:1px solid var(--line);transition:.2s}
-    .btn.primary{background:var(--blue);color:#07101e;border-color:var(--blue)}.btn:hover{transform:translateY(-2px)}
-    .hero-card{background:linear-gradient(145deg,#172943,#101a2b);border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 24px 70px #0003}
-    .avatar{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:#07101e;font:800 22px Manrope;margin-bottom:22px}
-    .hero-card .small{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.12em}
-    .hero-card h3{font-size:20px;margin:8px 0 14px}.status{display:inline-flex;gap:8px;align-items:center;color:var(--cyan);font-size:13px}.dot{width:7px;height:7px;border-radius:50%;background:var(--cyan)}
-    section{padding:76px 0;border-top:1px solid var(--line)}
-    .section-top{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}
-    .section-top h2{font-size:clamp(28px,4vw,38px);margin-top:8px}.section-intro{max-width:520px;color:var(--muted);font-size:14px}
-    .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px}
-    .card p{color:var(--muted);font-size:15px}.facts{display:grid;gap:16px}.fact{padding-bottom:14px;border-bottom:1px solid var(--line)}.fact:last-child{border:0;padding:0}.fact b{display:block;font-size:13px;margin-bottom:3px}.fact span{color:var(--muted);font-size:13px}
-    .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .skill{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}.skill h3{font-size:16px;margin-bottom:7px}.skill p{font-size:13px;color:var(--muted)}
-    .tag{display:inline-block;margin-top:14px;padding:5px 9px;border-radius:99px;background:#1d3551;color:#9ecaff;font-size:11px;font-weight:700}
-    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-    .project{background:linear-gradient(145deg,var(--panel),#101a2b);border:1px solid var(--line);border-radius:16px;padding:25px;display:flex;flex-direction:column;min-height:230px}
-    .project .number{font:700 12px Manrope;color:var(--cyan);letter-spacing:.12em}.project h3{font-size:20px;margin:16px 0 10px}.project p{color:var(--muted);font-size:14px}.project .tag{align-self:flex-start;margin-top:auto}
-    .experience{display:grid;grid-template-columns:180px 1fr;gap:22px;padding:24px 0;border-bottom:1px solid var(--line)}.experience:last-child{border:0}.experience .type{color:var(--cyan);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em}.experience h3{font-size:18px;margin-bottom:5px}.experience p{color:var(--muted);font-size:14px}
-    .contact{background:linear-gradient(130deg,#142945,#101a2b);border:1px solid var(--line);border-radius:20px;padding:36px;display:flex;align-items:center;justify-content:space-between;gap:28px}.contact h2{font-size:clamp(26px,4vw,36px);max-width:540px}.contact p{color:var(--muted);font-size:14px;margin-top:10px}.contact .actions{margin:0}
-    footer{padding:30px 0;color:var(--muted);font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:16px}
-    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:76px 0}.hero-card{max-width:420px}.about-grid{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,1fr)}.contact{align-items:flex-start;flex-direction:column}}
-    @media(max-width:560px){.container{width:min(100% - 32px,var(--max))}.links{display:none;position:absolute;top:76px;left:0;right:0;padding:20px 24px;background:var(--panel);flex-direction:column;gap:16px;border-bottom:1px solid var(--line)}.links.open{display:flex}.menu{display:block}.skills,.projects{grid-template-columns:1fr}.section-top{align-items:flex-start;flex-direction:column}.experience{grid-template-columns:1fr;gap:8px}.contact{padding:26px}.footer-inner{flex-direction:column}}
+    .lead{font-size:17px;color:var(--muted);max-width:650px}
+    .actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:27px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 17px;border-radius:8px;font-size:13px;font-weight:700;border:1px solid var(--line);transition:.2s}
+    .btn.primary{background:var(--navy);color:#fff;border-color:var(--navy)}.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+    .intro-card{background:linear-gradient(145deg,#f8fbff,#eef4fa);border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:var(--shadow)}
+    .initials{width:62px;height:62px;border-radius:15px;background:var(--navy);display:grid;place-items:center;color:white;font:800 22px Manrope;margin-bottom:22px}
+    .intro-card .small{color:var(--blue);font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700}
+    .intro-card h3{font-size:20px;margin:8px 0 13px;color:var(--navy)}
+    .intro-card p{color:var(--muted);font-size:13px}
+    .status{display:inline-flex;gap:8px;align-items:center;color:#28734f;font-size:12px;font-weight:600;margin-top:17px}.dot{width:7px;height:7px;border-radius:50%;background:#36a36c}
+    section.content-section{padding:72px 0;border-top:1px solid var(--line)}
+    .section-top{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:27px}
+    .section-top h2{font-size:clamp(27px,4vw,36px);margin-top:7px;color:var(--navy)}
+    .section-intro{max-width:510px;color:var(--muted);font-size:13px}
+    .about-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:25px;box-shadow:0 5px 20px rgba(25,55,90,.035)}
+    .card p{color:var(--muted);font-size:14px}.facts{display:grid;gap:14px;background:var(--surface)}
+    .fact{padding-bottom:12px;border-bottom:1px solid var(--line)}.fact:last-child{border:0;padding:0}.fact b{display:block;font-size:12px;color:var(--navy);margin-bottom:2px}.fact span{color:var(--muted);font-size:12px}
+    .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+    .skill{background:#fff;border:1px solid var(--line);border-radius:13px;padding:19px}
+    .skill h3{font-size:15px;margin-bottom:6px;color:var(--navy)}.skill p{font-size:12px;color:var(--muted)}
+    .tag{display:inline-block;margin-top:12px;padding:4px 8px;border-radius:5px;background:var(--surface2);color:var(--blue);font-size:10px;font-weight:700}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+    .project{background:#fff;border:1px solid var(--line);border-radius:14px;padding:23px;display:flex;flex-direction:column;min-height:225px;transition:.2s}
+    .project:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#cbd9e8}
+    .project .number{font:700 10px Manrope;color:var(--blue);letter-spacing:.12em}
+    .project h3{font-size:18px;margin:13px 0 8px;color:var(--navy)}
+    .project p{color:var(--muted);font-size:13px}
+    .project .tag{align-self:flex-start;margin-top:auto}
+    .project-link{display:inline-block;color:var(--blue);font-size:12px;font-weight:700;margin-top:15px}
+    .project-link:hover{text-decoration:underline}
+    .experience{display:grid;grid-template-columns:180px 1fr;gap:22px;padding:21px 0;border-bottom:1px solid var(--line)}
+    .experience:last-child{border:0}.experience .type{color:var(--blue);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+    .experience h3{font-size:16px;margin-bottom:4px;color:var(--navy)}.experience .meta{font-size:11px;color:#7b899b;margin-bottom:6px}.experience p{color:var(--muted);font-size:13px}
+    .contact{background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:32px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .contact h2{font-size:clamp(25px,4vw,34px);max-width:510px;color:var(--navy)}
+    .contact p{color:var(--muted);font-size:13px;margin-top:8px}.contact .actions{margin:0}
+    footer{padding:27px 0;color:#8290a2;font-size:11px}
+    .footer-inner{display:flex;justify-content:space-between;gap:15px}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:76px 0}.intro-card{max-width:440px}.about-grid{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,1fr)}.contact{align-items:flex-start;flex-direction:column}}
+    @media(max-width:560px){.container{width:min(100% - 32px,var(--max))}.links{display:none;position:absolute;top:74px;left:0;right:0;padding:18px 24px;background:#fff;flex-direction:column;gap:14px;border-bottom:1px solid var(--line)}.links.open{display:flex}.menu{display:block}.skills,.projects{grid-template-columns:1fr}.section-top{align-items:flex-start;flex-direction:column}.experience{grid-template-columns:1fr;gap:5px}.contact{padding:24px}.footer-inner{flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
   </style>
 </head>
@@ -64,70 +80,120 @@
       <button class="menu" id="menuButton" aria-label="Buka menu" aria-expanded="false">Menu</button>
     </div>
   </header>
-
   <main>
     <div class="container">
       <section class="hero" id="home" style="border:0">
         <div>
           <div class="eyebrow">Personal Portfolio · 2026</div>
-          <h1>Hi, I'm Fajar.<br><span>Data Analytics</span> enthusiast.</h1>
-          <p class="lead">Lulusan Pendidikan Bisnis yang sedang membangun kompetensi di bidang data analytics. Tertarik mengolah data menjadi informasi yang jelas dan membantu proses pengambilan keputusan.</p>
+          <h1>Halo, saya Fajar.<br><span>Business & Data</span> Enthusiast.</h1>
+          <p class="lead">Lulusan Pendidikan Bisnis Universitas Pendidikan Indonesia yang memiliki minat pada analisis data, strategi bisnis, marketing, riset, dan pemanfaatan AI untuk pengembangan konten digital.</p>
           <div class="actions">
-            <a class="btn primary" href="#projects">Lihat proyek</a>
-            <a class="btn" href="mailto:fajarsidik338@gmail.com">Hubungi saya</a>
+            <a class="btn primary" href="#projects">Jelajahi Proyek</a>
+            <a class="btn" href="mailto:fajarsidik338@gmail.com">Hubungi Saya</a>
+            <a class="btn" href="https://github.com/fajarsidik05/portfolio" target="_blank" rel="noopener noreferrer">Portfolio Repository ↗</a>
           </div>
         </div>
-        <aside class="hero-card">
-          <div class="avatar">FS</div>
-          <div class="small">Current focus</div>
-          <h3>Building a foundation in data analytics</h3>
-          <div class="status"><span class="dot"></span> Open to full-time opportunities</div>
+        <aside class="intro-card">
+          <div class="initials">FS</div>
+          <div class="small">Profil Profesional</div>
+          <h3>Fajar Sidik</h3>
+          <p>Business Education Graduate<br>Universitas Pendidikan Indonesia</p>
+          <div class="status"><span class="dot"></span> Terbuka untuk peluang full-time</div>
         </aside>
       </section>
 
-      <section id="about">
-        <div class="section-top"><div><div class="eyebrow">01 / About</div><h2>Tentang Saya</h2></div><p class="section-intro">Menggabungkan pemahaman bisnis, ketelitian, dan proses belajar teknis untuk berkembang sebagai Data Analyst.</p></div>
+      <section class="content-section" id="about">
+        <div class="section-top"><div><div class="eyebrow">01 / About</div><h2>Tentang Saya</h2></div><p class="section-intro">Memadukan pemahaman bisnis, pengalaman operasional, dan kemampuan analitis untuk menyelesaikan persoalan secara terstruktur.</p></div>
         <div class="about-grid">
-          <div class="card"><p>Saya merupakan lulusan S1 Pendidikan Bisnis, Fakultas Pendidikan Ekonomi dan Bisnis, Universitas Pendidikan Indonesia. Latar belakang bisnis membantu saya memahami konteks di balik angka, sementara pengalaman akademik dan pekerjaan membentuk kemampuan komunikasi, pemecahan masalah, serta koordinasi.</p><br><p>Saat ini saya berfokus memperkuat kemampuan analisis data melalui Excel dan SQL, kemudian memperluasnya ke visualisasi data menggunakan Power BI. Saya tertarik pada proyek yang menghubungkan data dengan persoalan bisnis nyata.</p></div>
+          <div class="card">
+            <p>Saya merupakan lulusan S1 Pendidikan Bisnis dari Fakultas Pendidikan Ekonomi dan Bisnis, Universitas Pendidikan Indonesia. Latar belakang akademik membekali saya dengan pemahaman mengenai bisnis, pemasaran, dan penelitian kuantitatif.</p><br>
+            <p>Saya memiliki pengalaman dalam customer relations, dukungan penjualan, kegiatan pembelajaran, serta koordinasi proyek. Di luar pengalaman tersebut, saya mengembangkan proyek mandiri di bidang edukasi keuangan dan terus memperkuat keterampilan analisis data.</p>
+          </div>
           <div class="card facts">
-            <div class="fact"><b>Pendidikan</b><span>S1 Pendidikan Bisnis · Universitas Pendidikan Indonesia</span></div>
+            <div class="fact"><b>Pendidikan</b><span>S1 Pendidikan Bisnis · UPI</span></div>
             <div class="fact"><b>Lokasi</b><span>Bandung, Indonesia</span></div>
-            <div class="fact"><b>Fokus karier</b><span>Data Analyst / Business Intelligence</span></div>
-            <div class="fact"><b>Bahasa</b><span>Bahasa Indonesia · English (developing)</span></div>
+            <div class="fact"><b>Minat Profesional</b><span>Business Analysis · Data Analytics · Marketing</span></div>
+            <div class="fact"><b>Bahasa</b><span>Bahasa Indonesia · English</span></div>
           </div>
         </div>
       </section>
 
-      <section id="skills">
-        <div class="section-top"><div><div class="eyebrow">02 / Skills</div><h2>Keahlian & Tools</h2></div><p class="section-intro">Saya membedakan kemampuan yang sudah digunakan dengan tools yang masih dalam tahap pembelajaran.</p></div>
+      <section class="content-section" id="skills">
+        <div class="section-top"><div><div class="eyebrow">02 / Capabilities</div><h2>Keahlian & Tools</h2></div><p class="section-intro">Ringkasan kemampuan berdasarkan pengalaman akademik, pekerjaan, dan proyek yang sedang dikembangkan.</p></div>
         <div class="skills">
-          <article class="skill"><h3>Microsoft Excel</h3><p>Formula, pengolahan data, dan PivotTable.</p><span class="tag">Intermediate</span></article>
-          <article class="skill"><h3>SQL · PostgreSQL</h3><p>Mempelajari query untuk mengambil, memfilter, dan menganalisis data.</p><span class="tag">Currently learning</span></article>
-          <article class="skill"><h3>Power BI</h3><p>Tool visualisasi dan business intelligence yang menjadi fokus pembelajaran berikutnya.</p><span class="tag">Learning roadmap</span></article>
-          <article class="skill"><h3>Python</h3><p>Direncanakan sebagai keterampilan lanjutan untuk analisis data.</p><span class="tag">Planned</span></article>
-          <article class="skill"><h3>Business Research</h3><p>Perumusan masalah, pengumpulan data, dan interpretasi hasil penelitian.</p><span class="tag">Academic experience</span></article>
-          <article class="skill"><h3>Communication</h3><p>Komunikasi pelanggan, koordinasi, dan penyampaian informasi.</p><span class="tag">Work experience</span></article>
+          <article class="skill"><h3>Business & Marketing</h3><p>Business analysis, brand strategy, marketing planning, customer relations.</p><span class="tag">Academic & work experience</span></article>
+          <article class="skill"><h3>Data Analysis</h3><p>Microsoft Excel, formula, data organization, dan PivotTable.</p><span class="tag">Intermediate Excel</span></article>
+          <article class="skill"><h3>SQL · PostgreSQL</h3><p>Query untuk mengambil, memfilter, dan menganalisis data relasional.</p><span class="tag">Currently learning</span></article>
+          <article class="skill"><h3>Research & Statistics</h3><p>Quantitative research, questionnaire design, SPSS, AMOS, dan SEM.</p><span class="tag">Academic experience</span></article>
+          <article class="skill"><h3>AI Content Production</h3><p>AI-assisted research, content development, video production, dan voice generation.</p><span class="tag">Claude · Scrap Creator · ElevenLabs</span></article>
+          <article class="skill"><h3>Communication</h3><p>Customer engagement, coordination, presentation, dan teamwork.</p><span class="tag">Professional experience</span></article>
         </div>
       </section>
 
-      <section id="projects">
-        <div class="section-top"><div><div class="eyebrow">03 / Selected work</div><h2>Proyek</h2></div><p class="section-intro">Karya akan ditambahkan setelah proyek selesai dan hasilnya siap ditinjau. Tidak ada studi kasus fiktif di portfolio ini.</p></div>
+      <section class="content-section" id="projects">
+        <div class="section-top"><div><div class="eyebrow">03 / Selected Work</div><h2>Proyek Pilihan</h2></div><p class="section-intro">Proyek akademik dan mandiri yang menunjukkan penerapan kemampuan bisnis, riset, serta produksi konten digital.</p></div>
         <div class="projects">
-          <article class="project"><div class="number">PROJECT 01 · ACADEMIC RESEARCH</div><h3>Financial Literacy & Investment Intention</h3><p>Penelitian mengenai pengaruh literasi keuangan terhadap minat investasi dengan perceived risk sebagai variabel mediasi. Menggunakan survei pada Generasi Z di Jawa Barat dan analisis CB-SEM dengan IBM SPSS AMOS.</p><span class="tag">205 respondents · AMOS</span></article>
-          <article class="project"><div class="number">PROJECT 02 · IN PROGRESS</div><h3>SQL Data Analysis Project</h3><p>Studi kasus analisis data menggunakan PostgreSQL sedang disiapkan. Detail dataset, query, dan insight akan ditampilkan setelah proyek selesai.</p><span class="tag">PostgreSQL · In progress</span></article>
+          <article class="project">
+            <div class="number">PROJECT 01 · FINANCIAL EDUCATION</div>
+            <h3>DUITVERSE | AI Content Creation</h3>
+            <p>Proyek edukasi keuangan untuk audiens muda. Riset topik menggunakan Scrap Creator, pengembangan konten dan video dengan Claude AI, serta voice generation melalui ElevenLabs.</p>
+            <a class="project-link" href="https://vt.tiktok.com/ZSpK3R3Mq/" target="_blank" rel="noopener noreferrer">Lihat contoh video di TikTok ↗</a>
+            <span class="tag">TikTok · Instagram Reels</span>
+          </article>
+          <article class="project">
+            <div class="number">PROJECT 02 · BRAND & MARKETING</div>
+            <h3>Brand Strategy & Marketing Plan</h3>
+            <p>Proyek perencanaan brand dan pemasaran untuk Scentplus dan The Originote, mencakup target audience, consumer insight, positioning, campaign touchpoints, dan integrated marketing plan.</p>
+            <a class="project-link" href="https://github.com/fajarsidik05/portfolio" target="_blank" rel="noopener noreferrer">Lihat dokumen proyek ↗</a>
+            <span class="tag">Brand Strategy · Marketing</span>
+          </article>
+          <article class="project">
+            <div class="number">PROJECT 03 · ACADEMIC RESEARCH</div>
+            <h3>Financial Literacy & Investment Intention</h3>
+            <p>Penelitian skripsi mengenai pengaruh Financial Literacy terhadap Investment Intention melalui Perceived Risk, berdasarkan survei terhadap 205 responden Generasi Z di Jawa Barat menggunakan SEM dan IBM SPSS AMOS.</p>
+            <a class="project-link" href="https://github.com/fajarsidik05/portfolio" target="_blank" rel="noopener noreferrer">Lihat ringkasan penelitian ↗</a>
+            <span class="tag">205 Respondents · SEM · AMOS</span>
+          </article>
+          <article class="project">
+            <div class="number">PROJECT 04 · DATA ANALYTICS</div>
+            <h3>SQL Data Analysis Projects</h3>
+            <p>Proyek analisis data menggunakan PostgreSQL sedang dikembangkan sebagai bagian dari penguatan keterampilan data analytics.</p>
+            <a class="project-link" href="https://github.com/fajarsidik05/portfolio" target="_blank" rel="noopener noreferrer">Kunjungi portfolio repository ↗</a>
+            <span class="tag">PostgreSQL · In Progress</span>
+          </article>
         </div>
       </section>
 
-      <section id="experience">
-        <div class="section-top"><div><div class="eyebrow">04 / Experience</div><h2>Pengalaman</h2></div></div>
-        <div class="experience"><div class="type">Professional</div><div><h3>Fitness Consultant · Oxy Fit 24H Bandung</h3><p>Berpengalaman dalam komunikasi dengan calon pelanggan dan anggota, tindak lanjut prospek, serta mendukung aktivitas operasional penjualan. Pengalaman ini mengembangkan kemampuan komunikasi, pelayanan, dan pengelolaan informasi pelanggan.</p></div></div>
+      <section class="content-section" id="experience">
+        <div class="section-top"><div><div class="eyebrow">04 / Background</div><h2>Pengalaman</h2></div></div>
+        <div class="experience">
+          <div class="type">Professional · Aug 2025 – Apr 2026</div>
+          <div><h3>Customer Relations & Sales Associate</h3><div class="meta">PT Oxyfit Sehat Bersama · Bandung</div><p>Memberikan informasi layanan dan keanggotaan kepada calon pelanggan serta anggota, melakukan tindak lanjut prospek, mengidentifikasi kebutuhan pelanggan, dan mendukung aktivitas operasional penjualan.</p></div>
+        </div>
+        <div class="experience">
+          <div class="type">Education · Feb – Jun 2025</div>
+          <div><h3>Teaching Assistant · MBKM Program</h3><div class="meta">SMK Negeri 2 Bandung</div><p>Mendukung kegiatan pembelajaran dan administrasi penilaian, serta menganalisis performa siswa untuk membantu mengidentifikasi kesenjangan pembelajaran dan memberikan masukan kepada guru.</p></div>
+        </div>
+        <div class="experience">
+          <div class="type">Leadership · Sep – Dec 2024</div>
+          <div><h3>Exhibition Project Leader</h3><div class="meta">The Ambassador of Business Edupreneur</div><p>Mengoordinasikan perencanaan dan pelaksanaan area pameran, komunikasi dengan exhibitor, pemetaan booth, serta kebutuhan logistik acara.</p></div>
+        </div>
       </section>
 
-      <section id="contact">
+      <section class="content-section" id="education">
+        <div class="section-top"><div><div class="eyebrow">05 / Education</div><h2>Pendidikan</h2></div></div>
+        <div class="card">
+          <h3 style="font-size:17px;color:var(--navy)">Universitas Pendidikan Indonesia</h3>
+          <p style="color:var(--muted);font-size:13px;margin-top:4px">S1 Pendidikan Bisnis · Fakultas Pendidikan Ekonomi dan Bisnis</p>
+          <p style="color:var(--muted);font-size:12px;margin-top:5px">2022 – 2026 · IPK 3,76/4,00</p>
+        </div>
+      </section>
+
+      <section class="content-section" id="contact">
         <div class="contact">
-          <div><div class="eyebrow">05 / Get in touch</div><h2>Mari terhubung dan berdiskusi.</h2><p>Terbuka untuk peluang kerja dan kolaborasi di bidang data, bisnis, dan analisis.</p></div>
+          <div><div class="eyebrow">06 / Get in Touch</div><h2>Mari terhubung dan berdiskusi.</h2><p>Terbuka untuk peluang kerja, kolaborasi, dan diskusi seputar bisnis, data, serta pengembangan konten digital.</p></div>
           <div class="actions">
-            <a class="btn primary" href="mailto:fajarsidik338@gmail.com">Email saya</a>
+            <a class="btn primary" href="mailto:fajarsidik338@gmail.com">Email</a>
             <a class="btn" href="https://www.linkedin.com/in/fajarsidik01" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
             <a class="btn" href="https://github.com/fajarsidik05" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
           </div>
@@ -135,13 +201,13 @@
       </section>
     </div>
   </main>
-  <footer><div class="container footer-inner"><span>© 2026 Fajar Sidik</span><span>Designed & built with HTML, CSS, and JavaScript.</span></div></footer>
+  <footer><div class="container footer-inner"><span>© 2026 Fajar Sidik</span><span>Designed with clarity and purpose.</span></div></footer>
   <script>
     const menuButton = document.getElementById('menuButton');
     const navLinks = document.getElementById('navLinks');
     menuButton.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      menuButton.setAttribute('aria-expanded', String(open));
+      const isOpen = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
     });
     navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
       navLinks.classList.remove('open');
