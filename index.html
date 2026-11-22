@@ -58,6 +58,18 @@
     .project .tag{align-self:flex-start;margin-top:auto}
     .project-link{display:inline-block;color:var(--blue);font-size:12px;font-weight:700;margin-top:15px}
     .project-link:hover{text-decoration:underline}
+
+    .cert-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .cert-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0}
+    .cert-preview{height:250px;background:#f3f6fa;border-bottom:1px solid var(--line)}
+    .cert-preview iframe{display:block;width:100%;height:100%;border:0;background:#fff}
+    .cert-info{padding:15px 16px 17px}
+    .cert-info h3{font-size:14px;line-height:1.45;color:var(--navy);margin:0 0 8px}
+    .cert-info a{font-size:11px;font-weight:700;color:var(--blue)}
+    .cert-info a:hover{text-decoration:underline}
+    @media(max-width:760px){.cert-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:560px){.cert-grid{grid-template-columns:1fr}.cert-preview{height:300px}}
+
     .experience{display:grid;grid-template-columns:180px 1fr;gap:22px;padding:21px 0;border-bottom:1px solid var(--line)}
     .experience:last-child{border:0}.experience .type{color:var(--blue);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
     .experience h3{font-size:16px;margin-bottom:4px;color:var(--navy)}.experience .meta{font-size:11px;color:#7b899b;margin-bottom:6px}.experience p{color:var(--muted);font-size:13px}
@@ -76,7 +88,7 @@
     <div class="container nav-inner">
       <a class="brand" href="#home">FAJAR<span>.</span></a>
       <nav class="links" id="navLinks" aria-label="Navigasi utama">
-        <a href="#about">Tentang</a><a href="#skills">Keahlian</a><a href="#tools">Tools</a><a href="#projects">Proyek</a><a href="#experience">Pengalaman</a><a href="#contact">Kontak</a>
+        <a href="#about">Tentang</a><a href="#skills">Keahlian</a><a href="#tools">Tools</a><a href="#projects">Proyek</a><a href="#certifications">Sertifikat</a><a href="#experience">Pengalaman</a><a href="#contact">Kontak</a>
       </nav>
       <button class="menu" id="menuButton" aria-label="Buka menu" aria-expanded="false">Menu</button>
     </div>
@@ -198,6 +210,61 @@
             <p>Proyek analisis data menggunakan PostgreSQL sedang dikembangkan sebagai bagian dari penguatan keterampilan data analytics.</p>
             <a class="project-link" href="https://github.com/fajarsidik05/portfolio" target="_blank" rel="noopener noreferrer">Kunjungi portfolio repository ↗</a>
             <span class="tag">PostgreSQL · In Progress</span>
+          </article>
+        </div>
+      </section>
+
+
+      <section class="content-section" id="certifications">
+        <div class="section-top"><div><div class="eyebrow">05 / Credentials</div><h2>Certifications & Training</h2></div><p class="section-intro">Sertifikat pelatihan dan pengembangan kompetensi dalam bidang data analytics, bisnis, marketing, teknologi, dan pengembangan profesional.</p></div>
+        <div class="cert-grid">
+          <article class="cert-card">
+            <div class="cert-preview"><iframe loading="lazy" title="Pratinjau sertifikat Google Data Analytics" src="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Google%20Data%20Analytics.pdf#toolbar=0&navpanes=0&view=FitH"></iframe></div>
+            <div class="cert-info"><h3>Google Data Analytics</h3><a href="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Google%20Data%20Analytics.pdf" target="_blank" rel="noopener noreferrer">Lihat sertifikat lengkap ↗</a></div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-preview"><iframe loading="lazy" title="Pratinjau sertifikat Microsoft Excel Intermediate" src="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Microsoft%20Excel%20Intermediate.pdf#toolbar=0&navpanes=0&view=FitH"></iframe></div>
+            <div class="cert-info"><h3>Microsoft Excel Intermediate</h3><a href="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Microsoft%20Excel%20Intermediate.pdf" target="_blank" rel="noopener noreferrer">Lihat sertifikat lengkap ↗</a></div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-preview"><iframe loading="lazy" title="Pratinjau sertifikat Basic Data" src="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Basic%20Data.pdf#toolbar=0&navpanes=0&view=FitH"></iframe></div>
+            <div class="cert-info"><h3>Basic Data</h3><a href="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Basic%20Data.pdf" target="_blank" rel="noopener noreferrer">Lihat sertifikat lengkap ↗</a></div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-preview"><iframe loading="lazy" title="Pratinjau sertifikat Google AI" src="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Sertifikat%20Google%20AI.pdf#toolbar=0&navpanes=0&view=FitH"></iframe></div>
+            <div class="cert-info"><h3>Google AI</h3><a href="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Sertifikat%20Google%20AI.pdf" target="_blank" rel="noopener noreferrer">Lihat sertifikat lengkap ↗</a></div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-preview"><iframe loading="lazy" title="Pratinjau sertifikat Career Preparation" src="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Career%20Preparation%20.pdf#toolbar=0&navpanes=0&view=FitH"></iframe></div>
+            <div class="cert-info"><h3>Career Preparation</h3><a href="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Career%20Preparation%20.pdf" target="_blank" rel="noopener noreferrer">Lihat sertifikat lengkap ↗</a></div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-preview"><iframe loading="lazy" title="Pratinjau sertifikat Copywriting" src="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/CopyWriting.pdf#toolbar=0&navpanes=0&view=FitH"></iframe></div>
+            <div class="cert-info"><h3>Copywriting</h3><a href="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/CopyWriting.pdf" target="_blank" rel="noopener noreferrer">Lihat sertifikat lengkap ↗</a></div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-preview"><iframe loading="lazy" title="Pratinjau sertifikat Creativepreneur" src="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Creativepreneur.pdf#toolbar=0&navpanes=0&view=FitH"></iframe></div>
+            <div class="cert-info"><h3>Creativepreneur</h3><a href="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Creativepreneur.pdf" target="_blank" rel="noopener noreferrer">Lihat sertifikat lengkap ↗</a></div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-preview"><iframe loading="lazy" title="Pratinjau sertifikat Marketing Management" src="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Marketing%20Management.pdf#toolbar=0&navpanes=0&view=FitH"></iframe></div>
+            <div class="cert-info"><h3>Marketing Management</h3><a href="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Marketing%20Management.pdf" target="_blank" rel="noopener noreferrer">Lihat sertifikat lengkap ↗</a></div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-preview"><iframe loading="lazy" title="Pratinjau sertifikat Personal Finance Management" src="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Personal%20finance%20Management.pdf#toolbar=0&navpanes=0&view=FitH"></iframe></div>
+            <div class="cert-info"><h3>Personal Finance Management</h3><a href="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Personal%20finance%20Management.pdf" target="_blank" rel="noopener noreferrer">Lihat sertifikat lengkap ↗</a></div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-preview"><iframe loading="lazy" title="Pratinjau sertifikat Pertolongan Pertama pada Kecelakaan (P3K)" src="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/P3K.pdf#toolbar=0&navpanes=0&view=FitH"></iframe></div>
+            <div class="cert-info"><h3>Pertolongan Pertama pada Kecelakaan (P3K)</h3><a href="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/P3K.pdf" target="_blank" rel="noopener noreferrer">Lihat sertifikat lengkap ↗</a></div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-preview"><iframe loading="lazy" title="Pratinjau sertifikat Pahlawan Muda Digital untuk UMKM Indonesia" src="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Sertifikat_FAJAR%20SIDIK_Pahlawan%20Muda%20Digital%20untuk%20UMKM%20Indonesia%20(Pandu%20Indonesia)%20(1).pdf#toolbar=0&navpanes=0&view=FitH"></iframe></div>
+            <div class="cert-info"><h3>Pahlawan Muda Digital untuk UMKM Indonesia</h3><a href="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Sertifikat_FAJAR%20SIDIK_Pahlawan%20Muda%20Digital%20untuk%20UMKM%20Indonesia%20(Pandu%20Indonesia)%20(1).pdf" target="_blank" rel="noopener noreferrer">Lihat sertifikat lengkap ↗</a></div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-preview"><iframe loading="lazy" title="Pratinjau sertifikat Web 3 & Blockchain" src="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Web%203%20%26%20Blockchain.pdf#toolbar=0&navpanes=0&view=FitH"></iframe></div>
+            <div class="cert-info"><h3>Web 3 & Blockchain</h3><a href="https://raw.githubusercontent.com/fajarsidik05/fajarsidik/main/assets/certifications/Web%203%20%26%20Blockchain.pdf" target="_blank" rel="noopener noreferrer">Lihat sertifikat lengkap ↗</a></div>
           </article>
         </div>
       </section>
