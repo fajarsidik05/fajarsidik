@@ -267,6 +267,97 @@
       .tool img,.tool .tool-mark,.interest-icon{transition:none!important}
     }
 
+  
+    /* CREATIVE EDITORIAL REDESIGN */
+    :root{--bg:#070d17;--surface:#101b2b;--surface2:#17263b;--text:#eef4ff;--muted:#9aacc3;--navy:#f4f7ff;--blue:#76b7ff;--line:rgba(157,184,218,.17);--lime:#c6f36b}
+    body{background-color:#070d17;background-image:radial-gradient(ellipse at 82% 16%,rgba(44,105,176,.19),transparent 34%),radial-gradient(ellipse at 5% 70%,rgba(198,243,107,.045),transparent 30%)}
+    .container{width:min(1240px,calc(100% - 64px))}
+    .nav{background:rgba(7,13,23,.78);border-bottom-color:rgba(157,184,218,.12)}
+    .nav-inner{height:82px}
+    .brand{font-size:16px;letter-spacing:-.04em}
+    .links{gap:23px;font-size:12px}
+    .hero-showcase{min-height:720px!important;grid-template-columns:1.05fr .95fr!important;gap:35px!important;padding:95px 0 78px!important;position:relative}
+    .hero-copy{position:relative;z-index:2}
+    .hero-copy .eyebrow{display:flex;align-items:center;gap:11px;font-size:10px;letter-spacing:.17em;color:#a9bdd7}
+    .live-mark{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 14px rgba(198,243,107,.8)}
+    .hero-showcase h1{font-size:clamp(66px,9vw,116px);line-height:.87;letter-spacing:-.09em;margin:30px 0 27px}
+    .hero-showcase h1 em{display:inline-block;margin-top:16px;color:#91a8c5;font-size:clamp(25px,3.3vw,42px);font-weight:500;font-style:normal;line-height:1.12;letter-spacing:-.055em}
+    .hero-period{color:var(--lime)}
+    .hero-showcase .lead{max-width:570px;font-size:15px;line-height:1.9;color:#a8b8ce}
+    .hero-showcase .actions{margin-top:30px}
+    .hero-showcase .btn{padding:13px 17px;border-radius:4px;font-size:12px}
+    .hero-showcase .btn.primary{background:var(--lime);border-color:var(--lime);color:#10190b}
+    .hero-showcase .btn.primary span{font-size:16px;margin-left:8px}
+    .hero-showcase .hero-cv{background:transparent}
+    .hero-footnote{display:flex;flex-wrap:wrap;gap:17px;margin-top:58px;padding-top:15px;border-top:1px solid var(--line);color:#7187a4;font:700 9px Manrope;letter-spacing:.12em}
+    .hero-visual{position:relative;min-height:520px;overflow:hidden;border:1px solid rgba(150,184,225,.2);background:linear-gradient(145deg,rgba(24,43,68,.9),rgba(8,17,30,.94));border-radius:4px;box-shadow:0 35px 90px rgba(0,0,0,.26);transform-style:preserve-3d;transition:transform .25s ease}
+    .hero-visual:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(130,166,210,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(130,166,210,.055) 1px,transparent 1px);background-size:36px 36px;mask-image:linear-gradient(140deg,#000,transparent 80%)}
+    .visual-topline,.visual-bottom{position:absolute;left:23px;right:23px;display:flex;justify-content:space-between;color:#8ba2bf;font:700 9px Manrope;letter-spacing:.15em;z-index:3}
+    .visual-topline{top:22px}.visual-bottom{bottom:20px;font-size:8px}
+    .visual-orbit{position:absolute;left:50%;top:44%;border:1px solid rgba(118,183,255,.24);border-radius:50%;transform:translate(-50%,-50%) rotate(-22deg)}
+    .orbit-one{width:310px;height:190px;animation:orbitSpin 22s linear infinite}
+    .orbit-two{width:390px;height:260px;transform:translate(-50%,-50%) rotate(38deg);border-style:dashed;animation:orbitSpinReverse 32s linear infinite}
+    .visual-core{position:absolute;left:50%;top:44%;width:170px;height:210px;transform:translate(-50%,-50%);padding:7px;background:linear-gradient(145deg,#c6f36b,#5c9ee9);box-shadow:0 20px 60px rgba(0,0,0,.4);z-index:2}
+    .visual-core img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:saturate(.8);display:block}
+    .float-label{position:absolute;z-index:4;display:flex;gap:9px;align-items:center;padding:10px 12px;background:rgba(9,19,33,.88);border:1px solid rgba(137,174,219,.28);box-shadow:0 10px 30px rgba(0,0,0,.2);color:#e6f0ff;font:700 9px Manrope;letter-spacing:.08em;animation:labelFloat 5s ease-in-out infinite}
+    .float-label b{color:var(--lime);font-size:12px}
+    .label-data{top:24%;left:7%}.label-market{right:5%;top:45%;animation-delay:-1.7s}.label-ai{left:12%;bottom:22%;animation-delay:-3.1s}
+    .visual-chart{position:absolute;right:8%;bottom:15%;width:145px;padding:12px;background:rgba(10,20,34,.9);border:1px solid rgba(137,174,219,.2);z-index:3}
+    .chart-caption{display:flex;justify-content:space-between;color:#8fa7c5;font:700 8px Manrope;letter-spacing:.1em}
+    .chart-bars{height:48px;display:flex;align-items:end;gap:4px;margin-top:8px}
+    .chart-bars i{display:block;flex:1;background:linear-gradient(0deg,#4c91d8,#c6f36b);height:var(--h);opacity:.88;animation:barPulse 2.8s ease-in-out infinite alternate}
+    .chart-bars i:nth-child(1){--h:24%;animation-delay:-.2s}.chart-bars i:nth-child(2){--h:40%;animation-delay:-.5s}.chart-bars i:nth-child(3){--h:32%;animation-delay:-.8s}.chart-bars i:nth-child(4){--h:55%;animation-delay:-1.1s}.chart-bars i:nth-child(5){--h:48%;animation-delay:-1.4s}.chart-bars i:nth-child(6){--h:66%;animation-delay:-1.7s}.chart-bars i:nth-child(7){--h:57%;animation-delay:-2s}.chart-bars i:nth-child(8){--h:78%;animation-delay:-2.3s}.chart-bars i:nth-child(9){--h:69%;animation-delay:-2.6s}.chart-bars i:nth-child(10){--h:92%;animation-delay:-2.9s}.chart-bars i:nth-child(11){--h:82%;animation-delay:-3.2s}.chart-bars i:nth-child(12){--h:100%;animation-delay:-3.5s}
+    @keyframes orbitSpin{to{transform:translate(-50%,-50%) rotate(338deg)}}
+    @keyframes orbitSpinReverse{to{transform:translate(-50%,-50%) rotate(-322deg)}}
+    @keyframes labelFloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
+    @keyframes barPulse{from{transform:scaleY(.72);transform-origin:bottom}to{transform:scaleY(1);transform-origin:bottom}}
+    /* Replace the repetitive card wall with editorial surfaces */
+    section.content-section{padding:92px 0}
+    .section-top{align-items:flex-end;margin-bottom:38px}
+    .section-top h2{font-size:clamp(34px,5vw,52px);max-width:620px}
+    .section-top .eyebrow{font-size:10px;letter-spacing:.18em}
+    .interest-grid{gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+    .interest-card{min-height:205px;padding:25px 24px;background:transparent!important;border:0!important;border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important;border-radius:0!important;box-shadow:none!important}
+    .interest-card:hover{background:rgba(25,49,78,.38)!important;transform:none!important}
+    .interest-icon{width:40px;height:40px;border-radius:50%;background:rgba(118,183,255,.08);border-color:rgba(118,183,255,.25);font-size:20px}
+    .interest-card h3{font-size:18px}
+    .skills{gap:0;border-top:1px solid var(--line)}
+    .skill{padding:22px 18px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none}
+    .skill:hover{background:rgba(25,49,78,.3);transform:none;box-shadow:none}
+    .tools-grid{gap:8px}
+    .tool{border-radius:3px;min-height:145px;background:rgba(16,29,47,.72);box-shadow:none}
+    .tool:hover{border-color:rgba(118,183,255,.55);transform:translateY(-4px)}
+    .project{border-radius:3px;background:linear-gradient(140deg,rgba(18,34,54,.94),rgba(10,19,32,.96));min-height:265px}
+    .project:after{border-color:rgba(198,243,107,.18)}
+    .experience-card{border-radius:3px;box-shadow:none}
+    .cert-card{border-radius:3px;box-shadow:none}
+    .contact{border-radius:3px;border-left:3px solid var(--lime)}
+    .back-top{border-radius:3px}
+    @media(max-width:850px){
+      .container{width:min(100% - 42px,1240px)}
+      .hero-showcase{grid-template-columns:1fr!important;gap:40px!important;padding-top:75px!important}
+      .hero-visual{min-height:490px;max-width:620px;width:100%;margin:0 auto}
+      .hero-footnote{margin-top:38px}
+    }
+    @media(max-width:560px){
+      .container{width:calc(100% - 32px)}
+      .hero-showcase h1{font-size:clamp(62px,18vw,88px)}
+      .hero-visual{min-height:420px}
+      .visual-core{width:135px;height:170px}
+      .orbit-one{width:250px;height:155px}.orbit-two{width:300px;height:210px}
+      .visual-chart{right:4%;bottom:13%;width:125px}
+      .label-data{left:4%;top:22%}.label-market{right:3%;top:47%}.label-ai{left:5%;bottom:20%}
+      .float-label{padding:8px;font-size:8px}
+      section.content-section{padding:68px 0}
+      .interest-grid{grid-template-columns:1fr 1fr}
+      .interest-card{padding:18px 14px;min-height:190px}
+      .hero-footnote{gap:10px;font-size:8px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .orbit-one,.orbit-two,.float-label,.chart-bars i{animation:none!important}
+      .hero-visual{transition:none!important}
+    }
+
   </style>
 </head>
 <body>
@@ -281,24 +372,27 @@
   </header>
   <main>
     <div class="container">
-      <section class="hero" id="home" style="border:0">
-        <div>
-          <div class="eyebrow">Business · Data · Markets · Finance · AI</div>
-          <h1>Fajar Sidik.<br><span>Turning Data Into</span> Insight.</h1>
-          <p class="lead">Lulusan Pendidikan Bisnis Universitas Pendidikan Indonesia dengan ketertarikan pada data analytics, market analysis, investasi, keuangan, dan penerapan AI. Saya senang mengeksplorasi bagaimana data, teknologi, dan pemahaman bisnis dapat membantu menghasilkan analisis serta keputusan yang lebih terarah.</p>
+      <section class="hero hero-showcase" id="home" style="border:0">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-mark"></span> BUSINESS · DATA · MARKETS · FINANCE · AI</div>
+          <h1>Fajar<br>Sidik<span class="hero-period">.</span><br><em>Curious by nature.<br>Driven by insight.</em></h1>
+          <p class="lead">Lulusan Pendidikan Bisnis Universitas Pendidikan Indonesia yang mengeksplorasi persimpangan antara data, bisnis, pasar keuangan, dan teknologi. Saya tertarik mengubah informasi menjadi pemahaman yang berguna untuk mengambil keputusan.</p>
           <div class="actions">
-            <a class="btn primary" href="#projects">Jelajahi Proyek</a>
+            <a class="btn primary" href="#projects">Jelajahi Proyek <span>↗</span></a>
             <a class="btn" href="mailto:fajarsidik338@gmail.com">Hubungi Saya</a>
-            <a class="btn" href="https://drive.google.com/file/d/1fDcBbcRIpSwky5twnrOkSot-epSuxeNs/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Lihat CV ↗</a>
-            <a class="btn" href="https://github.com/fajarsidik05/portfolio" target="_blank" rel="noopener noreferrer">Portfolio Repository ↗</a>
+            <a class="btn hero-cv" href="https://drive.google.com/file/d/1fDcBbcRIpSwky5twnrOkSot-epSuxeNs/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Lihat CV ↗</a>
           </div>
+          <div class="hero-footnote"><span>BASED IN INDONESIA</span><span>OPEN TO OPPORTUNITIES</span><span>2026 — PRESENT</span></div>
         </div>
-        <aside class="intro-card">
-          <img class="profile-photo" src="foto%20Profesional.jpeg" alt="Foto profil Fajar Sidik">
-          <div class="small">Professional Profile</div>
-          <h3>Fajar Sidik</h3>
-          <p>Business Education Graduate<br>Universitas Pendidikan Indonesia</p>
-          <div class="status"><span class="dot"></span> Terbuka untuk peluang profesional</div>
+        <aside class="hero-visual" aria-label="Visualisasi data dan profil">
+          <div class="visual-topline"><span>PERSONAL OVERVIEW</span><span>FS / 026</span></div>
+          <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+          <div class="visual-core"><img src="foto%20Profesional.jpeg" alt="Foto profil Fajar Sidik"></div>
+          <div class="float-label label-data"><b>01</b><span>DATA<br>ANALYTICS</span></div>
+          <div class="float-label label-market"><b>02</b><span>MARKET<br>INSIGHT</span></div>
+          <div class="float-label label-ai"><b>03</b><span>AI &<br>TECHNOLOGY</span></div>
+          <div class="visual-chart"><div class="chart-caption"><span>EXPLORING IDEAS</span><span>↗</span></div><div class="chart-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="visual-bottom"><span>BUSINESS EDUCATION GRADUATE</span><span>UPI · BANDUNG</span></div>
         </aside>
       </section>
 
@@ -670,6 +764,19 @@
       const indexLabel = card.querySelector('.index');
       if(indexLabel) card.insertBefore(icon,indexLabel);
     });
+
+  
+    // Subtle pointer parallax for the hero data panel.
+    const heroVisual = document.querySelector('.hero-visual');
+    if(heroVisual && !reduceMotion && window.matchMedia('(pointer:fine)').matches){
+      heroVisual.addEventListener('pointermove',event=>{
+        const rect=heroVisual.getBoundingClientRect();
+        const x=(event.clientX-rect.left)/rect.width-.5;
+        const y=(event.clientY-rect.top)/rect.height-.5;
+        heroVisual.style.transform='perspective(900px) rotateY('+(x*5)+'deg) rotateX('+(-y*4)+'deg)';
+      });
+      heroVisual.addEventListener('pointerleave',()=>{heroVisual.style.transform='perspective(900px) rotateY(0) rotateX(0)'});
+    }
 
   </script>
 </body>
