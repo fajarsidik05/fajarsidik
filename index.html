@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal portfolio Fajar Sidik, lulusan Pendidikan Bisnis dengan minat pada analisis data, bisnis, marketing, riset, dan AI content creation.">
+  <meta name="description" content="Personal portfolio Fajar Sidik, lulusan Pendidikan Bisnis dengan ketertarikan pada data analytics, market and investment analysis, finance, business research, serta penerapan artificial intelligence.">
   <meta name="theme-color" content="#ffffff">
-  <title>Fajar Sidik | Personal Portfolio</title>
+  <title>Fajar Sidik | Business, Data & Finance</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
     .container{width:min(var(--max),calc(100% - 48px));margin:auto}
     .nav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
     .nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between}
-    .brand{font:800 18px Manrope,sans-serif;letter-spacing:-.05em;color:var(--navy)}.brand span{color:var(--blue)}
+    .brand{font:800 16px Manrope,sans-serif;letter-spacing:-.035em;color:var(--navy);white-space:nowrap}.brand span{color:var(--blue)}
     .links{display:flex;gap:27px;color:var(--muted);font-size:13px;font-weight:600}.links a:hover{color:var(--blue)}
     .menu{display:none;background:#fff;color:var(--navy);border:1px solid var(--line);padding:8px 12px;border-radius:8px;font:600 13px "DM Sans"}
     .hero{padding:104px 0 90px;display:grid;grid-template-columns:1.35fr .65fr;gap:56px;align-items:center}
@@ -41,6 +41,12 @@
     .section-top h2{font-size:clamp(27px,4vw,36px);margin-top:7px;color:var(--navy)}
     .section-intro{max-width:510px;color:var(--muted);font-size:13px}
     .about-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}
+    .interest-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .interest-card{border:1px solid var(--line);border-radius:13px;padding:21px;background:linear-gradient(150deg,#fff,#f8fafd);min-height:168px}
+    .interest-card .index{font:700 10px Manrope;letter-spacing:.12em;color:var(--blue)}
+    .interest-card h3{font-size:16px;color:var(--navy);margin:12px 0 7px}
+    .interest-card p{font-size:12px;color:var(--muted);line-height:1.65}
+    .profile-note{margin-top:17px;padding:15px 17px;border-left:3px solid var(--blue);background:var(--surface);border-radius:0 9px 9px 0;color:var(--muted);font-size:12px}
     .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:25px;box-shadow:0 5px 20px rgba(25,55,90,.035)}
     .card p{color:var(--muted);font-size:14px}.facts{display:grid;gap:14px;background:var(--surface)}
     .fact{padding-bottom:12px;border-bottom:1px solid var(--line)}.fact:last-child{border:0;padding:0}.fact b{display:block;font-size:12px;color:var(--navy);margin-bottom:2px}.fact span{color:var(--muted);font-size:12px}
@@ -78,17 +84,17 @@
     .contact p{color:var(--muted);font-size:13px;margin-top:8px}.contact .actions{margin:0}
     footer{padding:27px 0;color:#8290a2;font-size:11px}
     .footer-inner{display:flex;justify-content:space-between;gap:15px}
-    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:76px 0}.intro-card{max-width:440px}.about-grid{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,1fr)}.tools-grid{grid-template-columns:repeat(4,1fr)}.contact{align-items:flex-start;flex-direction:column}}
-    @media(max-width:560px){.container{width:min(100% - 32px,var(--max))}.links{display:none;position:absolute;top:74px;left:0;right:0;padding:18px 24px;background:#fff;flex-direction:column;gap:14px;border-bottom:1px solid var(--line)}.links.open{display:flex}.menu{display:block}.skills,.projects{grid-template-columns:1fr}.tools-grid{grid-template-columns:repeat(2,1fr)}.section-top{align-items:flex-start;flex-direction:column}.experience{grid-template-columns:1fr;gap:5px}.contact{padding:24px}.footer-inner{flex-direction:column}}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:76px 0}.intro-card{max-width:440px}.about-grid{grid-template-columns:1fr}.interest-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.skills{grid-template-columns:repeat(2,1fr)}.tools-grid{grid-template-columns:repeat(4,1fr)}.contact{align-items:flex-start;flex-direction:column}}
+    @media(max-width:560px){.container{width:min(100% - 32px,var(--max))}.brand{font-size:14px}.links{display:none;position:absolute;top:74px;left:0;right:0;padding:18px 24px;background:#fff;flex-direction:column;gap:14px;border-bottom:1px solid var(--line)}.links.open{display:flex}.menu{display:block}.skills,.projects,.interest-grid{grid-template-columns:1fr}.tools-grid{grid-template-columns:repeat(2,1fr)}.section-top{align-items:flex-start;flex-direction:column}.experience{grid-template-columns:1fr;gap:5px}.contact{padding:24px}.footer-inner{flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
   </style>
 </head>
 <body>
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#home">FAJAR<span>.</span></a>
+      <a class="brand" href="#home" aria-label="Fajar Sidik, beranda">FAJAR SIDIK<span>.</span></a>
       <nav class="links" id="navLinks" aria-label="Navigasi utama">
-        <a href="#about">Tentang</a><a href="#skills">Keahlian</a><a href="#tools">Tools</a><a href="#projects">Proyek</a><a href="#certifications">Sertifikat</a><a href="#experience">Pengalaman</a><a href="#contact">Kontak</a>
+        <a href="#about">Profil</a><a href="#interests">Fokus Minat</a><a href="#skills">Keahlian</a><a href="#tools">Tools</a><a href="#projects">Proyek</a><a href="#certifications">Sertifikat</a><a href="#experience">Pengalaman</a><a href="#contact">Kontak</a>
       </nav>
       <button class="menu" id="menuButton" aria-label="Buka menu" aria-expanded="false">Menu</button>
     </div>
@@ -97,9 +103,9 @@
     <div class="container">
       <section class="hero" id="home" style="border:0">
         <div>
-          <div class="eyebrow">Personal Portfolio · 2026</div>
-          <h1>Halo, saya Fajar.<br><span>Business & Data</span> Enthusiast.</h1>
-          <p class="lead">Lulusan Pendidikan Bisnis Universitas Pendidikan Indonesia yang memiliki minat pada analisis data, strategi bisnis, marketing, riset, dan pemanfaatan AI untuk pengembangan konten digital.</p>
+          <div class="eyebrow">Business · Data · Markets · Finance · AI</div>
+          <h1>Fajar Sidik.<br><span>Turning Data Into</span> Insight.</h1>
+          <p class="lead">Lulusan Pendidikan Bisnis Universitas Pendidikan Indonesia dengan ketertarikan pada data analytics, market analysis, investasi, keuangan, dan penerapan AI. Saya senang mengeksplorasi bagaimana data, teknologi, dan pemahaman bisnis dapat membantu menghasilkan analisis serta keputusan yang lebih terarah.</p>
           <div class="actions">
             <a class="btn primary" href="#projects">Jelajahi Proyek</a>
             <a class="btn" href="mailto:fajarsidik338@gmail.com">Hubungi Saya</a>
@@ -108,10 +114,10 @@
         </div>
         <aside class="intro-card">
           <img class="profile-photo" src="foto%20Profesional.jpeg" alt="Foto profil Fajar Sidik">
-          <div class="small">Profil Profesional</div>
+          <div class="small">Professional Profile</div>
           <h3>Fajar Sidik</h3>
           <p>Business Education Graduate<br>Universitas Pendidikan Indonesia</p>
-          <div class="status"><span class="dot"></span> Terbuka untuk peluang full-time</div>
+          <div class="status"><span class="dot"></span> Terbuka untuk peluang profesional</div>
         </aside>
       </section>
 
@@ -119,20 +125,33 @@
         <div class="section-top"><div><div class="eyebrow">01 / About</div><h2>Tentang Saya</h2></div><p class="section-intro">Memadukan pemahaman bisnis, pengalaman operasional, dan kemampuan analitis untuk menyelesaikan persoalan secara terstruktur.</p></div>
         <div class="about-grid">
           <div class="card">
-            <p>Saya merupakan lulusan S1 Pendidikan Bisnis dari Fakultas Pendidikan Ekonomi dan Bisnis, Universitas Pendidikan Indonesia. Latar belakang akademik membekali saya dengan pemahaman mengenai bisnis, pemasaran, dan penelitian kuantitatif.</p><br>
-            <p>Saya memiliki pengalaman dalam customer relations, dukungan penjualan, kegiatan pembelajaran, serta koordinasi proyek. Di luar pengalaman tersebut, saya mengembangkan proyek mandiri di bidang edukasi keuangan dan terus memperkuat keterampilan analisis data.</p>
+            <p>Saya merupakan lulusan S1 Pendidikan Bisnis dari Fakultas Pendidikan Ekonomi dan Bisnis, Universitas Pendidikan Indonesia. Latar belakang ini membentuk pemahaman saya mengenai proses bisnis, pemasaran, perilaku konsumen, serta penelitian kuantitatif.</p><br>
+            <p>Saat ini saya memperluas kompetensi pada analisis data, analisis pasar dan investasi, keuangan, serta pemanfaatan artificial intelligence. Saya tertarik menggabungkan pendekatan analitis dengan konteks bisnis untuk memahami tren, mengevaluasi informasi, dan menyusun insight yang dapat dipertanggungjawabkan.</p>
+            <div class="profile-note">Pendekatan saya: memahami konteks masalah, memeriksa kualitas informasi, menganalisis data yang tersedia, lalu menyampaikan temuan secara terstruktur dan mudah dipahami.</div>
           </div>
           <div class="card facts">
             <div class="fact"><b>Pendidikan</b><span>S1 Pendidikan Bisnis · UPI</span></div>
             <div class="fact"><b>Lokasi</b><span>Bandung, Indonesia</span></div>
-            <div class="fact"><b>Minat Profesional</b><span>Business Operations · Business Analysis · Data Analytics · Marketing & Research</span></div>
+            <div class="fact"><b>Area of Interest</b><span>Data & Market Analysis · Investment & Finance · AI Applications · Business Research</span></div>
             <div class="fact"><b>Bahasa</b><span>Bahasa Indonesia · English</span></div>
           </div>
         </div>
       </section>
 
+      <section class="content-section" id="interests">
+        <div class="section-top"><div><div class="eyebrow">02 / Areas of Interest</div><h2>Bidang yang Saya Eksplorasi</h2></div><p class="section-intro">Ruang lingkup minat profesional yang ingin terus saya dalami melalui pembelajaran, riset, dan proyek berbasis data.</p></div>
+        <div class="interest-grid">
+          <article class="interest-card"><div class="index">01 · DATA</div><h3>Data Analytics</h3><p>Mengolah, mengeksplorasi, dan memvisualisasikan data untuk menemukan pola, menjawab pertanyaan, serta mendukung keputusan.</p></article>
+          <article class="interest-card"><div class="index">02 · MARKETS</div><h3>Market Analysis</h3><p>Mempelajari dinamika industri dan pasar, tren konsumen, kompetisi, serta faktor ekonomi yang memengaruhi pergerakan pasar.</p></article>
+          <article class="interest-card"><div class="index">03 · INVESTMENT</div><h3>Investment Analysis</h3><p>Mengeksplorasi analisis instrumen investasi, fundamental, risiko, valuasi, dan hubungan antara kondisi makro dengan pasar keuangan.</p></article>
+          <article class="interest-card"><div class="index">04 · FINANCE</div><h3>Finance & Economics</h3><p>Memahami laporan keuangan, pengelolaan keuangan, indikator ekonomi, serta bagaimana faktor finansial memengaruhi keputusan bisnis.</p></article>
+          <article class="interest-card"><div class="index">05 · ARTIFICIAL INTELLIGENCE</div><h3>AI & Automation</h3><p>Mengeksplorasi AI untuk riset, analisis, produktivitas, workflow automation, dan pengembangan solusi atau personal projects.</p></article>
+          <article class="interest-card"><div class="index">06 · BUSINESS</div><h3>Business & Research</h3><p>Menghubungkan strategi bisnis, perilaku konsumen, riset kuantitatif, dan pemecahan masalah secara sistematis.</p></article>
+        </div>
+      </section>
+
       <section class="content-section" id="skills">
-        <div class="section-top"><div><div class="eyebrow">02 / Capabilities</div><h2>Keahlian & Tools</h2></div><p class="section-intro">Ringkasan kemampuan berdasarkan pengalaman akademik, pekerjaan, dan proyek yang sedang dikembangkan.</p></div>
+        <div class="section-top"><div><div class="eyebrow">03 / Capabilities</div><h2>Keahlian & Tools</h2></div><p class="section-intro">Ringkasan kemampuan berdasarkan pengalaman akademik, pekerjaan, dan proyek yang sedang dikembangkan.</p></div>
         <div class="skills">
           <article class="skill"><h3>Business & Marketing</h3><p>Business analysis, brand strategy, marketing planning, customer relations.</p><span class="tag">Academic & work experience</span></article>
           <article class="skill"><h3>Data Analysis</h3><p>Microsoft Excel, formula, data organization, dan PivotTable.</p><span class="tag">Intermediate Excel</span></article>
@@ -144,7 +163,7 @@
       </section>
 
       <section class="content-section" id="tools">
-        <div class="section-top"><div><div class="eyebrow">03 / Digital Toolkit</div><h2>Tools & Technologies</h2></div><p class="section-intro">Aplikasi yang digunakan untuk mendukung pekerjaan bisnis, analisis, riset, produktivitas, dan produksi konten digital.</p></div>
+        <div class="section-top"><div><div class="eyebrow">04 / Digital Toolkit</div><h2>Tools & Technologies</h2></div><p class="section-intro">Aplikasi yang digunakan untuk mendukung pekerjaan bisnis, analisis, riset, produktivitas, dan produksi konten digital.</p></div>
         <div class="tools-groups">
           <div class="tool-group"><h3>Office, Productivity & Collaboration</h3><div class="tools-grid">
             <div class="tool"><img loading="lazy" decoding="async" src="assets/tools/Excel%20Logo%20%5BMicrosoft%5D.jpg" alt="Microsoft Excel logo"><b>Microsoft Excel</b><small>Intermediate</small></div>
@@ -174,7 +193,7 @@
       </section>
 
       <section class="content-section" id="projects">
-        <div class="section-top"><div><div class="eyebrow">04 / Selected Work</div><h2>Proyek Pilihan</h2></div><p class="section-intro">Proyek akademik dan mandiri yang menunjukkan penerapan kemampuan bisnis, riset, serta produksi konten digital.</p></div>
+        <div class="section-top"><div><div class="eyebrow">05 / Selected Work</div><h2>Proyek Pilihan</h2></div><p class="section-intro">Proyek akademik dan mandiri yang menunjukkan penerapan kemampuan bisnis, riset, serta produksi konten digital.</p></div>
         <div class="projects">
           <article class="project">
             <div class="number">PROJECT 01 · FINANCIAL EDUCATION</div>
@@ -216,7 +235,7 @@
 
 
       <section class="content-section" id="certifications">
-        <div class="section-top"><div><div class="eyebrow">05 / Credentials</div><h2>Certifications & Training</h2></div><p class="section-intro">Sertifikat pelatihan dan pengembangan kompetensi dalam bidang data analytics, bisnis, marketing, teknologi, dan pengembangan profesional.</p></div>
+        <div class="section-top"><div><div class="eyebrow">06 / Credentials</div><h2>Certifications & Training</h2></div><p class="section-intro">Sertifikat pelatihan dan pengembangan kompetensi dalam bidang data analytics, bisnis, marketing, teknologi, dan pengembangan profesional.</p></div>
         <div class="cert-grid">
           <article class="cert-card">
             <div class="cert-preview"><img loading="lazy" decoding="async" src="assets/certifications/thumbnails/Google%20Data%20Analytics-1.png" alt="Pratinjau sertifikat Google Data Analytics"></div>
@@ -270,7 +289,7 @@
       </section>
 
       <section class="content-section" id="experience">
-        <div class="section-top"><div><div class="eyebrow">05 / Background</div><h2>Pengalaman</h2></div></div>
+        <div class="section-top"><div><div class="eyebrow">07 / Background</div><h2>Pengalaman</h2></div></div>
         <div class="experience">
           <div class="type">Professional · Aug 2025 – Apr 2026</div>
           <div><h3>Customer Relations & Sales Associate</h3><div class="meta">PT Oxyfit Sehat Bersama · Bandung</div><p>Memberikan informasi layanan dan keanggotaan kepada calon pelanggan serta anggota, melakukan tindak lanjut prospek, mengidentifikasi kebutuhan pelanggan, dan mendukung aktivitas operasional penjualan.</p></div>
@@ -286,7 +305,7 @@
       </section>
 
       <section class="content-section" id="education">
-        <div class="section-top"><div><div class="eyebrow">06 / Education</div><h2>Pendidikan</h2></div></div>
+        <div class="section-top"><div><div class="eyebrow">08 / Education</div><h2>Pendidikan</h2></div></div>
         <div class="card">
           <h3 style="font-size:17px;color:var(--navy)">Universitas Pendidikan Indonesia</h3>
           <p style="color:var(--muted);font-size:13px;margin-top:4px">S1 Pendidikan Bisnis · Fakultas Pendidikan Ekonomi dan Bisnis</p>
@@ -296,7 +315,7 @@
 
       <section class="content-section" id="contact">
         <div class="contact">
-          <div><div class="eyebrow">07 / Get in Touch</div><h2>Mari terhubung dan berdiskusi.</h2><p>Terbuka untuk peluang kerja, kolaborasi, dan diskusi seputar bisnis, data, serta pengembangan konten digital.</p></div>
+          <div><div class="eyebrow">09 / Get in Touch</div><h2>Mari terhubung dan berdiskusi.</h2><p>Terbuka untuk peluang kerja, kolaborasi, dan diskusi seputar bisnis, data, serta pengembangan konten digital.</p></div>
           <div class="actions">
             <a class="btn primary" href="mailto:fajarsidik338@gmail.com">Email</a>
             <a class="btn" href="https://wa.me/6288219993507" target="_blank" rel="noopener noreferrer">WhatsApp: 0882-1999-3507 ↗</a>
@@ -308,7 +327,7 @@
       </section>
     </div>
   </main>
-  <footer><div class="container footer-inner"><span>© 2026 Fajar Sidik</span><span>Designed with clarity and purpose.</span></div></footer>
+  <footer><div class="container footer-inner"><span>© 2026 Fajar Sidik · Personal Portfolio</span><span>Designed with clarity and purpose.</span></div></footer>
   <script>
     const menuButton = document.getElementById('menuButton');
     const navLinks = document.getElementById('navLinks');
