@@ -86,6 +86,43 @@
     .footer-inner{display:flex;justify-content:space-between;gap:15px}
     @media(max-width:760px){.hero{grid-template-columns:1fr;padding:76px 0}.intro-card{max-width:440px}.about-grid{grid-template-columns:1fr}.interest-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.skills{grid-template-columns:repeat(2,1fr)}.tools-grid{grid-template-columns:repeat(4,1fr)}.contact{align-items:flex-start;flex-direction:column}}
     @media(max-width:560px){.container{width:min(100% - 32px,var(--max))}.brand{font-size:14px}.links{display:none;position:absolute;top:74px;left:0;right:0;padding:18px 24px;background:#fff;flex-direction:column;gap:14px;border-bottom:1px solid var(--line)}.links.open{display:flex}.menu{display:block}.skills,.projects,.interest-grid{grid-template-columns:1fr}.tools-grid{grid-template-columns:repeat(2,1fr)}.section-top{align-items:flex-start;flex-direction:column}.experience{grid-template-columns:1fr;gap:5px}.contact{padding:24px}.footer-inner{flex-direction:column}}
+
+    /* Editorial portfolio upgrades */
+    .brand{font-size:15px;letter-spacing:-.02em}
+    .hero{min-height:590px}
+    .hero h1{max-width:760px}
+    .hero .lead{max-width:690px;line-height:1.85}
+    .intro-card{position:relative;overflow:hidden}
+    .intro-card:after{content:"";position:absolute;width:150px;height:150px;border:1px solid rgba(40,105,166,.13);border-radius:50%;right:-65px;top:-65px}
+    .content-section{scroll-margin-top:85px}
+    .card,.interest-card,.skill,.project,.cert-card{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+    .card:hover,.interest-card:hover,.skill:hover,.cert-card:hover{border-color:#cbd9e8;box-shadow:var(--shadow)}
+    .experience-list{display:grid;gap:22px}
+    .experience-card{display:grid;grid-template-columns:minmax(0,1fr) 1.05fr;gap:25px;padding:25px;background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:0 5px 20px rgba(25,55,90,.035)}
+    .experience-card h3{font-size:18px;color:var(--navy);margin:8px 0 5px}
+    .experience-card .meta{font-size:12px;color:#7b899b;margin-bottom:12px}
+    .experience-card p{font-size:13px;color:var(--muted)}
+    .experience-card .type{font-size:10px;color:var(--blue);font-weight:800;text-transform:uppercase;letter-spacing:.13em}
+    .photo-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;align-content:start}
+    .photo-gallery figure{margin:0;min-width:0}
+    .photo-gallery img{width:100%;height:130px;display:block;object-fit:cover;border-radius:9px;background:var(--surface2);border:1px solid var(--line)}
+    .photo-gallery figcaption{font-size:10px;color:var(--muted);margin-top:5px;line-height:1.35}
+    .education-card{display:grid;grid-template-columns: minmax(0,1fr) 1.15fr;gap:25px;align-items:start}
+    .education-heading{display:flex;gap:15px;align-items:center;margin-bottom:15px}
+    .upi-logo{width:66px;height:66px;object-fit:contain;padding:7px;background:#fff;border:1px solid var(--line);border-radius:12px}
+    .education-card h3{font-size:19px;color:var(--navy)}
+    .education-card .edu-meta{font-size:12px;color:var(--muted);margin-top:5px}
+    .education-card .edu-copy{font-size:13px;color:var(--muted);margin-top:15px}
+    .education-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .education-gallery img{width:100%;height:150px;display:block;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--surface2)}
+    .resource-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px}
+    .resource-links a{font-size:12px;color:var(--blue);font-weight:700}
+    .resource-links a:hover{text-decoration:underline}
+    .section-kicker{display:inline-flex;align-items:center;gap:8px}
+    .section-kicker:before{content:"";width:22px;height:1px;background:var(--blue)}
+    @media(max-width:760px){.experience-card,.education-card{grid-template-columns:1fr}.photo-gallery img{height:145px}.education-gallery img{height:170px}}
+    @media(max-width:480px){.photo-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.photo-gallery img{height:135px}.education-gallery{grid-template-columns:1fr 1fr}.education-gallery img{height:125px}}
+
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
   </style>
 </head>
@@ -94,7 +131,7 @@
     <div class="container nav-inner">
       <a class="brand" href="#home" aria-label="Fajar Sidik, beranda">FAJAR SIDIK<span>.</span></a>
       <nav class="links" id="navLinks" aria-label="Navigasi utama">
-        <a href="#about">Profil</a><a href="#interests">Fokus Minat</a><a href="#skills">Keahlian</a><a href="#tools">Tools</a><a href="#projects">Proyek</a><a href="#certifications">Sertifikat</a><a href="#experience">Pengalaman</a><a href="#contact">Kontak</a>
+        <a href="#about">Profil</a><a href="#interests">Fokus Minat</a><a href="#skills">Keahlian</a><a href="#tools">Tools</a><a href="#projects">Proyek</a><a href="#certifications">Sertifikat</a><a href="#experience">Pengalaman</a><a href="#education">Pendidikan</a><a href="#contact">Kontak</a>
       </nav>
       <button class="menu" id="menuButton" aria-label="Buka menu" aria-expanded="false">Menu</button>
     </div>
@@ -109,6 +146,7 @@
           <div class="actions">
             <a class="btn primary" href="#projects">Jelajahi Proyek</a>
             <a class="btn" href="mailto:fajarsidik338@gmail.com">Hubungi Saya</a>
+            <a class="btn" href="https://drive.google.com/file/d/1fDcBbcRIpSwky5twnrOkSot-epSuxeNs/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Lihat CV ↗</a>
             <a class="btn" href="https://github.com/fajarsidik05/portfolio" target="_blank" rel="noopener noreferrer">Portfolio Repository ↗</a>
           </div>
         </div>
@@ -125,8 +163,10 @@
         <div class="section-top"><div><div class="eyebrow">01 / About</div><h2>Tentang Saya</h2></div><p class="section-intro">Memadukan pemahaman bisnis, pengalaman operasional, dan kemampuan analitis untuk menyelesaikan persoalan secara terstruktur.</p></div>
         <div class="about-grid">
           <div class="card">
-            <p>Saya merupakan lulusan S1 Pendidikan Bisnis dari Fakultas Pendidikan Ekonomi dan Bisnis, Universitas Pendidikan Indonesia. Latar belakang ini membentuk pemahaman saya mengenai proses bisnis, pemasaran, perilaku konsumen, serta penelitian kuantitatif.</p><br>
-            <p>Saat ini saya memperluas kompetensi pada analisis data, analisis pasar dan investasi, keuangan, serta pemanfaatan artificial intelligence. Saya tertarik menggabungkan pendekatan analitis dengan konteks bisnis untuk memahami tren, mengevaluasi informasi, dan menyusun insight yang dapat dipertanggungjawabkan.</p>
+            <p>Saya merupakan lulusan S1 Pendidikan Bisnis, Fakultas Pendidikan Ekonomi dan Bisnis, Universitas Pendidikan Indonesia. Saya memiliki pengalaman dalam operasional penjualan, administrasi, kegiatan kependidikan, koordinasi acara, serta penelitian kuantitatif.</p><br>
+            <p>Ketertarikan profesional saya mencakup analisis data, bisnis, pasar dan investasi, keuangan, serta pemanfaatan artificial intelligence. Saya mengembangkan kemampuan untuk mengolah informasi, memahami konteks permasalahan, menginterpretasikan temuan, dan menyampaikan hasil secara terstruktur.</p><br>
+            <p>Saya terbuka terhadap peluang profesional dan magang lintas fungsi yang relevan dengan latar belakang serta kompetensi saya, khususnya pada bidang bisnis, data, keuangan, operasional, administrasi, dan riset.</p>
+            <div class="resource-links"><a href="https://fajarsidik05.github.io/fajarsidik/" target="_blank" rel="noopener noreferrer">Personal Portfolio ↗</a><a href="https://drive.google.com/file/d/1fDcBbcRIpSwky5twnrOkSot-epSuxeNs/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Curriculum Vitae ↗</a></div>
             <div class="profile-note">Pendekatan saya: memahami konteks masalah, memeriksa kualitas informasi, menganalisis data yang tersedia, lalu menyampaikan temuan secara terstruktur dan mudah dipahami.</div>
           </div>
           <div class="card facts">
@@ -289,28 +329,69 @@
       </section>
 
       <section class="content-section" id="experience">
-        <div class="section-top"><div><div class="eyebrow">07 / Background</div><h2>Pengalaman</h2></div></div>
-        <div class="experience">
-          <div class="type">Professional · Aug 2025 – Apr 2026</div>
-          <div><h3>Customer Relations & Sales Associate</h3><div class="meta">PT Oxyfit Sehat Bersama · Bandung</div><p>Memberikan informasi layanan dan keanggotaan kepada calon pelanggan serta anggota, melakukan tindak lanjut prospek, mengidentifikasi kebutuhan pelanggan, dan mendukung aktivitas operasional penjualan.</p></div>
-        </div>
-        <div class="experience">
-          <div class="type">Education · Feb – Jun 2025</div>
-          <div><h3>Teaching Assistant · MBKM Program</h3><div class="meta">SMK Negeri 2 Bandung</div><p>Mendukung kegiatan pembelajaran dan administrasi penilaian, serta menganalisis performa siswa untuk membantu mengidentifikasi kesenjangan pembelajaran dan memberikan masukan kepada guru.</p></div>
-        </div>
-        <div class="experience">
-          <div class="type">Leadership · Sep – Dec 2024</div>
-          <div><h3>Exhibition Project Leader</h3><div class="meta">The Ambassador of Business Edupreneur</div><p>Mengoordinasikan perencanaan dan pelaksanaan area pameran, komunikasi dengan exhibitor, pemetaan booth, serta kebutuhan logistik acara.</p></div>
+        <div class="section-top"><div><div class="eyebrow">07 / Professional Background</div><h2>Pengalaman</h2></div><p class="section-intro">Pengalaman profesional, kependidikan, dan kepemimpinan yang membentuk kemampuan komunikasi, koordinasi, layanan, serta pemecahan masalah.</p></div>
+        <div class="experience-list">
+          <article class="experience-card">
+            <div>
+              <div class="type">Professional Experience · Aug 2025 – Apr 2026</div>
+              <h3>Sales Operations / Customer Relations</h3>
+              <div class="meta">PT Oxyfit Sehat Bersama · Bandung</div>
+              <p>Menangani komunikasi dengan calon pelanggan dan anggota, menjelaskan layanan serta keanggotaan, melakukan tindak lanjut prospek, mengidentifikasi kebutuhan pelanggan, dan mendukung aktivitas operasional penjualan serta pelaporan.</p>
+            </div>
+            <div class="photo-gallery">
+              <figure><img loading="lazy" decoding="async" src="assets/experience/Oxyfit%2001.jpeg" alt="Dokumentasi aktivitas operasional Oxyfit"><figcaption>Aktivitas operasional</figcaption></figure>
+              <figure><img loading="lazy" decoding="async" src="assets/experience/Oxyfit%2002.jpeg" alt="Dokumentasi pengalaman kerja Oxyfit"><figcaption>Lingkungan kerja</figcaption></figure>
+              <figure><img loading="lazy" decoding="async" src="assets/experience/Oxyfit%2003.jpeg" alt="Dokumentasi kegiatan Oxyfit"><figcaption>Kegiatan tim</figcaption></figure>
+            </div>
+          </article>
+          <article class="experience-card">
+            <div>
+              <div class="type">Education Experience · Feb – Jun 2025</div>
+              <h3>Program Penguatan Profesional Kependidikan (P3K)</h3>
+              <div class="meta">SMK Negeri 2 Bandung · UPI</div>
+              <p>Terlibat dalam kegiatan pembelajaran, persiapan materi, administrasi dan penilaian, serta koordinasi dengan guru dan peserta didik. Pengalaman ini memperkuat keterampilan komunikasi, penyampaian informasi, pengelolaan kelas, dan administrasi pendidikan.</p>
+            </div>
+            <div class="photo-gallery">
+              <figure><img loading="lazy" decoding="async" src="assets/experience/teaching%2001.png" alt="Dokumentasi kegiatan pembelajaran"><figcaption>Kegiatan pembelajaran</figcaption></figure>
+              <figure><img loading="lazy" decoding="async" src="assets/experience/teaching%2002.png" alt="Dokumentasi aktivitas mengajar"><figcaption>Aktivitas mengajar</figcaption></figure>
+              <figure><img loading="lazy" decoding="async" src="assets/experience/teaching%2009.jpeg" alt="Dokumentasi program kependidikan"><figcaption>Program kependidikan</figcaption></figure>
+            </div>
+          </article>
+          <article class="experience-card">
+            <div>
+              <div class="type">Project Leadership · Sep – Dec 2024</div>
+              <h3>Exhibition Project Leader</h3>
+              <div class="meta">The Ambassador of Business Edupreneur · UPI</div>
+              <p>Mengoordinasikan persiapan dan pelaksanaan kegiatan pameran, komunikasi dengan exhibitor, pemetaan booth, kebutuhan logistik, serta kolaborasi tim untuk memastikan kegiatan berjalan sesuai rencana.</p>
+            </div>
+            <div class="photo-gallery">
+              <figure><img loading="lazy" decoding="async" src="assets/experience/Cover%20Proposal%20Exhibition.png" alt="Sampul proposal kegiatan exhibition"><figcaption>Proposal kegiatan</figcaption></figure>
+              <figure><img loading="lazy" decoding="async" src="assets/experience/Exhibition%2001.JPG" alt="Dokumentasi kegiatan exhibition"><figcaption>Pelaksanaan pameran</figcaption></figure>
+              <figure><img loading="lazy" decoding="async" src="assets/experience/Exhibition%2002.jpg" alt="Dokumentasi area exhibition"><figcaption>Area pameran</figcaption></figure>
+            </div>
+          </article>
         </div>
       </section>
 
       <section class="content-section" id="education">
-        <div class="section-top"><div><div class="eyebrow">08 / Education</div><h2>Pendidikan</h2></div></div>
-        <div class="card">
-          <h3 style="font-size:17px;color:var(--navy)">Universitas Pendidikan Indonesia</h3>
-          <p style="color:var(--muted);font-size:13px;margin-top:4px">S1 Pendidikan Bisnis · Fakultas Pendidikan Ekonomi dan Bisnis</p>
-          <p style="color:var(--muted);font-size:12px;margin-top:5px">2022 – 2026 · IPK 3,76/4,00</p>
-        </div>
+        <div class="section-top"><div><div class="eyebrow">08 / Academic Background</div><h2>Pendidikan</h2></div><p class="section-intro">Latar belakang akademik yang menjadi dasar pemahaman bisnis, pemasaran, penelitian, dan analisis kuantitatif.</p></div>
+        <article class="card education-card">
+          <div>
+            <div class="education-heading">
+              <img class="upi-logo" loading="lazy" decoding="async" src="assets/education/Logo%20UPI.png" alt="Logo Universitas Pendidikan Indonesia">
+              <div><h3>Universitas Pendidikan Indonesia</h3><div class="edu-meta">Fakultas Pendidikan Ekonomi dan Bisnis</div></div>
+            </div>
+            <p class="edu-meta"><strong>S1 Pendidikan Bisnis</strong> · 2022–2026</p>
+            <p class="edu-meta">IPK 3,76 / 4,00</p>
+            <p class="edu-copy">Mempelajari dasar-dasar bisnis, pemasaran, perilaku konsumen, kewirausahaan, manajemen, serta metodologi penelitian. Menyelesaikan penelitian kuantitatif mengenai literasi keuangan, perceived risk, dan investment intention pada Generasi Z di Jawa Barat.</p>
+          </div>
+          <div class="education-gallery">
+            <img loading="lazy" decoding="async" src="assets/education/foto%20isola.jpg" alt="Gedung Isola Universitas Pendidikan Indonesia">
+            <img loading="lazy" decoding="async" src="assets/education/Education%2002.jpeg" alt="Dokumentasi perjalanan akademik di UPI">
+            <img loading="lazy" decoding="async" src="assets/education/Education%2003.jpeg" alt="Dokumentasi kegiatan pendidikan">
+            <img loading="lazy" decoding="async" src="assets/education/Education%2004.jpeg" alt="Dokumentasi kelulusan dan pendidikan">
+          </div>
+        </article>
       </section>
 
       <section class="content-section" id="contact">
