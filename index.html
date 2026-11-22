@@ -237,6 +237,36 @@
       *,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
     }
 
+  
+    /* ANIMATED ICON SYSTEM */
+    .interest-icon{
+      width:46px;height:46px;display:grid;place-items:center;margin-bottom:17px;
+      border:1px solid rgba(98,168,255,.28);border-radius:12px;
+      color:#8bc4ff;background:linear-gradient(145deg,rgba(46,105,174,.22),rgba(18,34,56,.72));
+      font:700 23px Manrope,sans-serif;
+      box-shadow:0 8px 22px rgba(0,0,0,.16);
+      animation:iconDrift 4.8s ease-in-out infinite;
+      transition:transform .35s cubic-bezier(.2,.7,.2,1),background .35s ease,box-shadow .35s ease;
+    }
+    .interest-card:nth-child(2) .interest-icon{animation-delay:-.7s}
+    .interest-card:nth-child(3) .interest-icon{animation-delay:-1.4s}
+    .interest-card:nth-child(4) .interest-icon{animation-delay:-2.1s}
+    .interest-card:nth-child(5) .interest-icon{animation-delay:-2.8s}
+    .interest-card:nth-child(6) .interest-icon{animation-delay:-3.5s}
+    .interest-card:hover .interest-icon{transform:translateY(-5px) rotate(-8deg) scale(1.08);background:rgba(48,119,198,.28);box-shadow:0 10px 28px rgba(46,132,226,.22)}
+    .tool img{transition:transform .35s cubic-bezier(.2,.7,.2,1),filter .35s ease}
+    .tool:hover img{transform:translateY(-5px) rotate(-5deg) scale(1.12);filter:drop-shadow(0 7px 9px rgba(75,155,255,.2))}
+    .tool:hover .tool-mark{transform:translateY(-5px) rotate(5deg) scale(1.1)}
+    .tool .tool-mark{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+    .status .dot{animation:statusPulse 2s ease-in-out infinite;box-shadow:0 0 0 0 rgba(54,163,108,.45)}
+    .btn:hover{border-color:rgba(98,168,255,.65)}
+    @keyframes iconDrift{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-5px) rotate(3deg)}}
+    @keyframes statusPulse{0%,100%{box-shadow:0 0 0 0 rgba(54,163,108,.38)}50%{box-shadow:0 0 0 6px rgba(54,163,108,0)}}
+    @media(prefers-reduced-motion:reduce){
+      .interest-icon,.status .dot{animation:none!important}
+      .tool img,.tool .tool-mark,.interest-icon{transition:none!important}
+    }
+
   </style>
 </head>
 <body>
@@ -626,6 +656,21 @@
     document.getElementById('lightboxClose').addEventListener('click',closeLightbox);
     lightbox.addEventListener('click',event => { if(event.target === lightbox) closeLightbox(); });
     document.addEventListener('keydown',event => { if(event.key === 'Escape') closeLightbox(); });
+  
+    // Add small animated symbols to the interest cards.
+    const interestSymbols = ['⌁','↗','◈','
+</body>
+</html>,'✳','◎'];
+    document.querySelectorAll('.interest-card').forEach((card,index) => {
+      if(card.querySelector('.interest-icon')) return;
+      const icon = document.createElement('span');
+      icon.className = 'interest-icon';
+      icon.setAttribute('aria-hidden','true');
+      icon.textContent = interestSymbols[index] || '✦';
+      const indexLabel = card.querySelector('.index');
+      if(indexLabel) card.insertBefore(icon,indexLabel);
+    });
+
   </script>
 </body>
 </html>
