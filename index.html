@@ -44,7 +44,7 @@
     .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:25px;box-shadow:0 5px 20px rgba(25,55,90,.035)}
     .card p{color:var(--muted);font-size:14px}.facts{display:grid;gap:14px;background:var(--surface)}
     .fact{padding-bottom:12px;border-bottom:1px solid var(--line)}.fact:last-child{border:0;padding:0}.fact b{display:block;font-size:12px;color:var(--navy);margin-bottom:2px}.fact span{color:var(--muted);font-size:12px}
-    .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+    .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}\n    .tools-groups{display:grid;gap:25px}.tool-group h3{font-size:15px;color:var(--navy);margin-bottom:12px}.tools-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.tool{min-height:125px;border:1px solid var(--line);border-radius:12px;padding:16px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;background:#fff;text-align:center}.tool img{width:38px;height:38px;object-fit:contain}.tool .tool-mark{width:38px;height:38px;border-radius:10px;background:var(--surface2);display:grid;place-items:center;color:var(--navy);font:800 13px Manrope}.tool b{font-size:12px;color:var(--navy)}.tool small{font-size:10px;color:var(--muted)}
     .skill{background:#fff;border:1px solid var(--line);border-radius:13px;padding:19px}
     .skill h3{font-size:15px;margin-bottom:6px;color:var(--navy)}.skill p{font-size:12px;color:var(--muted)}
     .tag{display:inline-block;margin-top:12px;padding:4px 8px;border-radius:5px;background:var(--surface2);color:var(--blue);font-size:10px;font-weight:700}
@@ -65,8 +65,8 @@
     .contact p{color:var(--muted);font-size:13px;margin-top:8px}.contact .actions{margin:0}
     footer{padding:27px 0;color:#8290a2;font-size:11px}
     .footer-inner{display:flex;justify-content:space-between;gap:15px}
-    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:76px 0}.intro-card{max-width:440px}.about-grid{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,1fr)}.contact{align-items:flex-start;flex-direction:column}}
-    @media(max-width:560px){.container{width:min(100% - 32px,var(--max))}.links{display:none;position:absolute;top:74px;left:0;right:0;padding:18px 24px;background:#fff;flex-direction:column;gap:14px;border-bottom:1px solid var(--line)}.links.open{display:flex}.menu{display:block}.skills,.projects{grid-template-columns:1fr}.section-top{align-items:flex-start;flex-direction:column}.experience{grid-template-columns:1fr;gap:5px}.contact{padding:24px}.footer-inner{flex-direction:column}}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:76px 0}.intro-card{max-width:440px}.about-grid{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,1fr)}.tools-grid{grid-template-columns:repeat(3,1fr)}.contact{align-items:flex-start;flex-direction:column}}
+    @media(max-width:560px){.container{width:min(100% - 32px,var(--max))}.links{display:none;position:absolute;top:74px;left:0;right:0;padding:18px 24px;background:#fff;flex-direction:column;gap:14px;border-bottom:1px solid var(--line)}.links.open{display:flex}.menu{display:block}.skills,.projects{grid-template-columns:1fr}.tools-grid{grid-template-columns:repeat(2,1fr)}.section-top{align-items:flex-start;flex-direction:column}.experience{grid-template-columns:1fr;gap:5px}.contact{padding:24px}.footer-inner{flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
   </style>
 </head>
@@ -75,7 +75,7 @@
     <div class="container nav-inner">
       <a class="brand" href="#home">FAJAR<span>.</span></a>
       <nav class="links" id="navLinks" aria-label="Navigasi utama">
-        <a href="#about">Tentang</a><a href="#skills">Keahlian</a><a href="#projects">Proyek</a><a href="#experience">Pengalaman</a><a href="#contact">Kontak</a>
+        <a href="#about">Tentang</a><a href="#skills">Keahlian</a><a href="#tools">Tools</a><a href="#projects">Proyek</a><a href="#experience">Pengalaman</a><a href="#contact">Kontak</a>
       </nav>
       <button class="menu" id="menuButton" aria-label="Buka menu" aria-expanded="false">Menu</button>
     </div>
@@ -130,8 +130,31 @@
         </div>
       </section>
 
+      <section class="content-section" id="tools">
+        <div class="section-top"><div><div class="eyebrow">03 / Digital Toolkit</div><h2>Tools & Technologies</h2></div><p class="section-intro">Aplikasi yang digunakan untuk mendukung pekerjaan bisnis, analisis, riset, produktivitas, dan produksi konten digital.</p></div>
+        <div class="tools-groups">
+          <div class="tool-group"><h3>Office, Productivity & Collaboration</h3><div class="tools-grid">
+            <div class="tool"><img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Microsoft Excel logo"><b>Microsoft Excel</b><small>Intermediate</small></div>
+            <div class="tool"><img src="https://cdn.simpleicons.org/googledrive/4285F4" alt="Google Drive logo"><b>Google Drive</b><small>Used</small></div>
+            <div class="tool"><img src="https://cdn.simpleicons.org/notion/000000" alt="Notion logo"><b>Notion</b><small>Used</small></div>
+            <div class="tool"><img src="https://cdn.simpleicons.org/github/181717" alt="GitHub logo"><b>GitHub</b><small>Used</small></div>
+          </div></div>
+          <div class="tool-group"><h3>Data & Research</h3><div class="tools-grid">
+            <div class="tool"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL logo"><b>PostgreSQL</b><small>Currently learning</small></div>
+            <div class="tool"><div class="tool-mark">SP</div><b>IBM SPSS</b><small>Academic experience</small></div>
+            <div class="tool"><div class="tool-mark">Am</div><b>IBM SPSS AMOS</b><small>Academic experience</small></div>
+          </div></div>
+          <div class="tool-group"><h3>AI & Content Creation</h3><div class="tools-grid">
+            <div class="tool"><img src="https://cdn.simpleicons.org/openai/412991" alt="OpenAI ChatGPT logo"><b>ChatGPT</b><small>Used</small></div>
+            <div class="tool"><img src="https://cdn.simpleicons.org/claude/D97757" alt="Claude logo"><b>Claude AI</b><small>Used</small></div>
+            <div class="tool"><img src="https://cdn.simpleicons.org/elevenlabs/000000" alt="ElevenLabs logo"><b>ElevenLabs</b><small>Used</small></div>
+            <div class="tool"><div class="tool-mark">SC</div><b>Scrap Creator</b><small>Used</small></div>
+          </div></div>
+        </div>
+      </section>
+
       <section class="content-section" id="projects">
-        <div class="section-top"><div><div class="eyebrow">03 / Selected Work</div><h2>Proyek Pilihan</h2></div><p class="section-intro">Proyek akademik dan mandiri yang menunjukkan penerapan kemampuan bisnis, riset, serta produksi konten digital.</p></div>
+        <div class="section-top"><div><div class="eyebrow">04 / Selected Work</div><h2>Proyek Pilihan</h2></div><p class="section-intro">Proyek akademik dan mandiri yang menunjukkan penerapan kemampuan bisnis, riset, serta produksi konten digital.</p></div>
         <div class="projects">
           <article class="project">
             <div class="number">PROJECT 01 · FINANCIAL EDUCATION</div>
@@ -165,7 +188,7 @@
       </section>
 
       <section class="content-section" id="experience">
-        <div class="section-top"><div><div class="eyebrow">04 / Background</div><h2>Pengalaman</h2></div></div>
+        <div class="section-top"><div><div class="eyebrow">05 / Background</div><h2>Pengalaman</h2></div></div>
         <div class="experience">
           <div class="type">Professional · Aug 2025 – Apr 2026</div>
           <div><h3>Customer Relations & Sales Associate</h3><div class="meta">PT Oxyfit Sehat Bersama · Bandung</div><p>Memberikan informasi layanan dan keanggotaan kepada calon pelanggan serta anggota, melakukan tindak lanjut prospek, mengidentifikasi kebutuhan pelanggan, dan mendukung aktivitas operasional penjualan.</p></div>
@@ -181,7 +204,7 @@
       </section>
 
       <section class="content-section" id="education">
-        <div class="section-top"><div><div class="eyebrow">05 / Education</div><h2>Pendidikan</h2></div></div>
+        <div class="section-top"><div><div class="eyebrow">06 / Education</div><h2>Pendidikan</h2></div></div>
         <div class="card">
           <h3 style="font-size:17px;color:var(--navy)">Universitas Pendidikan Indonesia</h3>
           <p style="color:var(--muted);font-size:13px;margin-top:4px">S1 Pendidikan Bisnis · Fakultas Pendidikan Ekonomi dan Bisnis</p>
@@ -191,7 +214,7 @@
 
       <section class="content-section" id="contact">
         <div class="contact">
-          <div><div class="eyebrow">06 / Get in Touch</div><h2>Mari terhubung dan berdiskusi.</h2><p>Terbuka untuk peluang kerja, kolaborasi, dan diskusi seputar bisnis, data, serta pengembangan konten digital.</p></div>
+          <div><div class="eyebrow">07 / Get in Touch</div><h2>Mari terhubung dan berdiskusi.</h2><p>Terbuka untuk peluang kerja, kolaborasi, dan diskusi seputar bisnis, data, serta pengembangan konten digital.</p></div>
           <div class="actions">
             <a class="btn primary" href="mailto:fajarsidik338@gmail.com">Email</a>
             <a class="btn" href="https://wa.me/6288219993507" target="_blank" rel="noopener noreferrer">WhatsApp: 0882-1999-3507 ↗</a>
