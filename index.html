@@ -124,6 +124,80 @@
     @media(max-width:480px){.photo-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.photo-gallery img{height:135px}.education-gallery{grid-template-columns:1fr 1fr}.education-gallery img{height:125px}}
 
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+    /* PREMIUM TECH EDITORIAL DASHBOARD */
+    :root{
+      --bg:#080d18;--surface:#101827;--surface2:#172338;--text:#edf3ff;
+      --muted:#9aa9bf;--navy:#f0f5ff;--blue:#62a8ff;--line:rgba(158,184,220,.17);
+      --max:1180px;--shadow:0 22px 60px rgba(0,0,0,.28)
+    }
+    body{background:var(--bg);color:var(--text);background-image:radial-gradient(ellipse at 78% 4%,rgba(39,104,184,.17),transparent 33%),radial-gradient(ellipse at 8% 38%,rgba(39,104,184,.08),transparent 28%)}
+    .nav{background:rgba(8,13,24,.82);border-bottom:1px solid var(--line)}
+    .brand{color:#f1f6ff}.brand span{color:var(--blue)}
+    .links{color:#aab8cc}.links a:hover{color:#fff}
+    .menu{background:var(--surface);color:#fff;border-color:var(--line)}
+    .hero{min-height:650px;padding:112px 0 100px;grid-template-columns:1.25fr .75fr;gap:65px}
+    .eyebrow,.section-kicker{color:var(--blue)}
+    h1{color:#f4f7ff;font-size:clamp(48px,7vw,82px);line-height:1.04;letter-spacing:-.065em}
+    h1 span{color:var(--blue)}
+    .lead{color:#aab8cc;font-size:16px;line-height:1.9}
+    .btn{border-color:var(--line);color:#dce8fa;background:rgba(255,255,255,.025);border-radius:5px}
+    .btn.primary{background:var(--blue);color:#07111f;border-color:var(--blue)}
+    .btn:hover{box-shadow:0 12px 30px rgba(42,127,226,.2)}
+    .intro-card,.card,.interest-card,.skill,.project,.cert-card,.experience-card,.tool{
+      background:linear-gradient(145deg,rgba(20,32,51,.96),rgba(13,22,37,.96));
+      border-color:var(--line);box-shadow:0 12px 35px rgba(0,0,0,.13);border-radius:9px
+    }
+    .intro-card{padding:30px;border-radius:12px}
+    .intro-card:before{content:"PROFILE / 2026";display:block;color:#7892b5;font:700 10px Manrope;letter-spacing:.16em;margin-bottom:22px}
+    .profile-photo{border-radius:10px;border-color:#263b59}
+    .intro-card h3,.interest-card h3,.skill h3,.project h3,.experience-card h3,.education-card h3,.tool b,.tool-group h3,.fact b{color:#edf4ff}
+    .intro-card p,.interest-card p,.card p,.skill p,.project p,.experience-card p,.education-card .edu-copy{color:#a3b2c8}
+    .intro-card .small,.experience-card .type,.experience .type{color:var(--blue)}
+    .status{color:#8bd7b0}
+    section.content-section{border-top-color:var(--line)}
+    .section-top h2{color:#f1f5fd;font-size:clamp(30px,4vw,42px);letter-spacing:-.05em}
+    .section-intro{color:#9aa9bf;line-height:1.8}
+    .card{box-shadow:none}
+    .facts{background:rgba(18,30,49,.8)}
+    .fact{border-bottom-color:var(--line)}
+    .fact span,.experience-card .meta,.education-card .edu-meta{color:#9aa9bf}
+    .profile-note{background:#17243a;border-left-color:var(--blue);color:#b2c0d4}
+    .interest-card{background:linear-gradient(145deg,#142239,#0e192b)}
+    .interest-card .index,.project .number{color:#72b5ff}
+    .skill,.tool{background:#111d30}
+    .tag{background:#1c3555;color:#8fc3ff;border-radius:3px}
+    .tool .tool-mark{background:#1b2b43;border-color:var(--line);color:#dceaff}
+    .tool small{color:#91a3bd}
+    .project{min-height:245px;position:relative;overflow:hidden}
+    .project:after{content:"";position:absolute;right:-38px;top:-45px;width:105px;height:105px;border:1px solid rgba(98,168,255,.15);border-radius:50%;pointer-events:none}
+    .project:hover,.card:hover,.interest-card:hover,.skill:hover,.cert-card:hover,.experience-card:hover{border-color:rgba(98,168,255,.48);box-shadow:0 20px 45px rgba(0,0,0,.25);transform:translateY(-3px)}
+    .project-link,.resource-links a,.cert-info a{color:#79b8ff}
+    .cert-preview{background:#101a2b;border-bottom-color:var(--line)}
+    .cert-preview img{background:#e9edf3}
+    .cert-info h3{color:#eaf1ff}
+    .experience-card{grid-template-columns:minmax(0,1fr) 1.05fr}
+    .photo-gallery img,.education-gallery img{border-color:var(--line);filter:saturate(.88)}
+    .upi-logo{background:#fff;border-color:var(--line)}
+    .contact{background:linear-gradient(120deg,#142743,#101a2b);border-color:var(--line);border-radius:10px}
+    .contact h2{color:#f2f6ff}.contact p{color:#aab8cc}
+    footer{color:#7789a4}
+    .section-top{margin-bottom:34px}
+    .section-top>div>.eyebrow{letter-spacing:.18em}
+    .experience-list{gap:16px}
+    .education-card{background:linear-gradient(145deg,#142239,#101a2b)}
+    @media(max-width:760px){
+      .hero{grid-template-columns:1fr;padding:82px 0 70px;min-height:auto}
+      .experience-card,.education-card{grid-template-columns:1fr}
+      .links{background:#0d1727;border-bottom-color:var(--line)}
+    }
+    @media(max-width:560px){
+      .hero{padding:68px 0 58px}
+      h1{font-size:clamp(43px,13vw,62px)}
+      .container{width:min(100% - 34px,var(--max))}
+      .intro-card{padding:24px}
+    }
+
   </style>
 </head>
 <body>
